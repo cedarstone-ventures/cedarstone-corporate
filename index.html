@@ -41,7 +41,7 @@
   --night:#0E1712; --night-2:#141F19; --cedar:#1F3D2F;
   --stone:#C9BCA3; --stone-dim:#93A094; --cream:#F4F0E6; --paper:#FBF9F4;
   --ink:#15201A; --dim:#5B665E; --line:rgba(201,188,163,.20); --line-l:#E6E0D1;
-  --gold:#B08F42;
+  --gold:#B08F42; --gold-text:#8A6D1F;
   --serif:'Fraunces',Georgia,serif; --sans:'Inter',system-ui,-apple-system,sans-serif;
   --wrap:1080px;
 }
@@ -53,7 +53,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.12;letter-spacin
 a{color:inherit}
 a:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 img{max-width:100%;display:block}
-.eyebrow{font-size:.67rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.eyebrow{font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-text);font-weight:600}
 
 /* --- mark: a stone arch. Deliberately NOT stacked bars, which read as a menu icon. */
 .mark{width:30px;height:30px;flex:none;display:block}
@@ -63,7 +63,7 @@ header{position:sticky;top:0;z-index:30;background:rgba(14,23,18,.92);backdrop-f
 .nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
 .brand b{font-family:var(--serif);font-weight:400;font-size:1.2rem;color:var(--cream);white-space:nowrap;letter-spacing:.004em}
-.brand i{font-style:normal;color:var(--stone-dim);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;margin-left:5px}
+.brand i{font-style:normal;color:var(--stone-dim);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;margin-left:5px}
 .navlinks{display:flex;gap:30px}
 .navlinks a{color:var(--stone);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s}
 .navlinks a:hover{color:var(--cream)}
@@ -76,6 +76,7 @@ header{position:sticky;top:0;z-index:30;background:rgba(14,23,18,.92);backdrop-f
 @keyframes settle{to{transform:scale(1)}}
 .hero::after{content:"";position:absolute;inset:0;
   background:linear-gradient(100deg,rgba(14,23,18,.96) 0%,rgba(14,23,18,.82) 38%,rgba(14,23,18,.42) 70%,rgba(14,23,18,.62) 100%)}
+.hero .eyebrow,.contact .eyebrow{color:var(--gold)}
 .hero .wrap{position:relative;z-index:2;padding-top:120px;padding-bottom:76px}
 .hero h1{font-size:clamp(2.2rem,5.6vw,3.7rem);max-width:15ch;margin:20px 0 24px;color:var(--cream);font-weight:300}
 .hero p{color:var(--stone);font-size:clamp(1rem,2.1vw,1.16rem);max-width:52ch}
@@ -97,8 +98,8 @@ h2{font-size:clamp(1.55rem,3.6vw,2.2rem);margin:14px 0 18px;max-width:22ch}
 .entry{display:grid;grid-template-columns:1fr;gap:6px 40px;padding:30px 0 32px;border-bottom:1px solid var(--line-l)}
 @media(min-width:820px){.entry{grid-template-columns:12.5rem 1fr;gap:0 48px;padding:34px 0 36px}}
 .entry .lbl{display:flex;align-items:baseline;gap:12px}
-.entry .no{font-family:var(--serif);font-size:.8rem;color:var(--gold);font-variant-numeric:tabular-nums;letter-spacing:.06em}
-.entry .lbl span{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);font-weight:600}
+.entry .lbl span.no{font-family:var(--serif);font-size:.86rem;color:var(--gold);font-variant-numeric:tabular-nums;letter-spacing:.06em}
+.entry .lbl span{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);font-weight:600}
 .entry h3{font-family:var(--serif);font-weight:400;font-size:1.22rem;margin-bottom:9px;letter-spacing:-.012em;max-width:34ch;text-wrap:balance}
 .entry p{color:var(--dim);font-size:.95rem;max-width:56ch}
 
@@ -132,7 +133,8 @@ h2{font-size:clamp(1.55rem,3.6vw,2.2rem);margin:14px 0 18px;max-width:22ch}
   color:var(--cream);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:6px;transition:color .2s}
 .mail:hover{color:var(--gold)}
 
-footer{background:var(--night);color:var(--stone-dim);padding:32px 0 50px;font-size:.84rem;border-top:1px solid var(--line)}
+footer,footer p{background:transparent;color:var(--stone-dim)}
+footer{background:var(--night);color:var(--stone-dim);padding:32px 0 50px;font-size:.86rem;border-top:1px solid var(--line)}
 footer a{color:var(--stone)}
 .frow{display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:space-between;align-items:center}
 

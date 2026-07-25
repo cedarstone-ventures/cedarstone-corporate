@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cedarstone Ventures LLC</title>
+<meta name="description" content="Cedarstone Ventures LLC is a small American holding company. We build and operate consumer brands that make careful, useful things. Registered in New Mexico and New Jersey.">
+<link rel="canonical" href="https://cedarstonellc.com/">
+<meta name="theme-color" content="#0E1712">
+<meta property="og:title" content="Cedarstone Ventures LLC">
+<meta property="og:description" content="A small American holding company. We build and operate consumer brands that make careful, useful things.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cedarstonellc.com/">
+<meta property="og:site_name" content="Cedarstone Ventures LLC">
+<meta property="og:image" content="https://cedarstonellc.com/assets/hero-1200.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://cedarstonellc.com/#org",
+  "name": "Cedarstone Ventures LLC",
+  "legalName": "Cedarstone Ventures LLC",
+  "url": "https://cedarstonellc.com/",
+  "email": "info@cedarstonellc.com",
+  "description": "A small American holding company that builds and operates consumer brands.",
+  "areaServed": { "@type": "Country", "name": "United States" },
+  "subOrganization": {
+    "@type": "Organization",
+    "name": "Deedwell",
+    "description": "Rental bookkeeping and tax records for small landlords."
+  }
+}
+</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='11' fill='%230E1712'/%3E%3Cpath d='M13 37 L13 23 A11 11 0 0 1 35 23 L35 37 Z' fill='%23C9BCA3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --night:#0E1712; --night-2:#141F19; --cedar:#1F3D2F;
+  --stone:#C9BCA3; --stone-dim:#93A094; --cream:#F4F0E6; --paper:#FBF9F4;
+  --ink:#15201A; --dim:#5B665E; --line:rgba(201,188,163,.20); --line-l:#E6E0D1;
+  --gold:#B08F42;
+  --serif:'Fraunces',Georgia,serif; --sans:'Inter',system-ui,-apple-system,sans-serif;
+  --wrap:1080px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.12;letter-spacing:-.016em}
+a{color:inherit}
+a:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+img{max-width:100%;display:block}
+.eyebrow{font-size:.67rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:600}
+
+/* --- mark: a stone arch. Deliberately NOT stacked bars, which read as a menu icon. */
+.mark{width:30px;height:30px;flex:none;display:block}
+
+header{position:sticky;top:0;z-index:30;background:rgba(14,23,18,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+@supports not (backdrop-filter:blur(2px)){header{background:var(--night)}}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+.brand b{font-family:var(--serif);font-weight:400;font-size:1.2rem;color:var(--cream);white-space:nowrap;letter-spacing:.004em}
+.brand i{font-style:normal;color:var(--stone-dim);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;margin-left:5px}
+.navlinks{display:flex;gap:30px}
+.navlinks a{color:var(--stone);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s}
+.navlinks a:hover{color:var(--cream)}
+@media(max-width:780px){.navlinks{display:none}.brand i{display:none}}
+
+/* --- hero: one photograph, one sentence, nothing else --- */
+.hero{position:relative;background:var(--night);min-height:min(84vh,660px);display:flex;align-items:flex-end;overflow:hidden}
+.hero picture,.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero img{opacity:.62;transform:scale(1.04);animation:settle 2.4s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes settle{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(100deg,rgba(14,23,18,.96) 0%,rgba(14,23,18,.82) 38%,rgba(14,23,18,.42) 70%,rgba(14,23,18,.62) 100%)}
+.hero .wrap{position:relative;z-index:2;padding-top:120px;padding-bottom:76px}
+.hero h1{font-size:clamp(2.2rem,5.6vw,3.7rem);max-width:15ch;margin:20px 0 24px;color:var(--cream);font-weight:300}
+.hero p{color:var(--stone);font-size:clamp(1rem,2.1vw,1.16rem);max-width:52ch}
+.hero .rule{width:52px;height:2px;background:var(--gold);margin-top:32px}
+
+/* --- sections: deliberately uneven rhythm --- */
+section{border-bottom:1px solid var(--line-l)}
+.s-tall{padding:104px 0}
+.s-mid{padding:78px 0}
+h2{font-size:clamp(1.55rem,3.6vw,2.2rem);margin:14px 0 18px;max-width:22ch}
+.lede{color:var(--dim);max-width:60ch;font-size:1.01rem}
+
+/* --- the ledger.
+   Deliberately NOT three cards in a grid: that is the default shape every AI site
+   lands on. This company keeps records for a living, so its own world is ruled
+   columns and entries in a book. Full-bleed rules, a marginal label, one entry per
+   row, tabular figures. It is the structure the subject already owns. */
+.ledger{margin-top:52px;border-top:1.5px solid var(--ink)}
+.entry{display:grid;grid-template-columns:1fr;gap:6px 40px;padding:30px 0 32px;border-bottom:1px solid var(--line-l)}
+@media(min-width:820px){.entry{grid-template-columns:12.5rem 1fr;gap:0 48px;padding:34px 0 36px}}
+.entry .lbl{display:flex;align-items:baseline;gap:12px}
+.entry .no{font-family:var(--serif);font-size:.8rem;color:var(--gold);font-variant-numeric:tabular-nums;letter-spacing:.06em}
+.entry .lbl span{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);font-weight:600}
+.entry h3{font-family:var(--serif);font-weight:400;font-size:1.22rem;margin-bottom:9px;letter-spacing:-.012em;max-width:34ch;text-wrap:balance}
+.entry p{color:var(--dim);font-size:.95rem;max-width:56ch}
+
+/* --- brand card --- */
+.brandcard{display:grid;grid-template-columns:1fr;border:1px solid var(--line-l);overflow:hidden;margin-top:42px;background:#fff}
+@media(min-width:840px){.brandcard{grid-template-columns:1.2fr .8fr}}
+.bc-body{padding:46px}
+.bc-body h3{font-family:var(--serif);font-weight:400;font-size:1.8rem;margin-bottom:7px;letter-spacing:-.015em}
+.bc-body .tag{color:var(--dim);font-size:.88rem;margin-bottom:20px}
+.bc-body p{color:var(--dim);font-size:.95rem;margin-bottom:26px}
+.bc-side{background:var(--cedar);color:var(--cream);padding:46px;display:flex;flex-direction:column;justify-content:center;gap:18px}
+.bc-side .fact{border-left:2px solid var(--gold);padding-left:15px}
+.bc-side .fact b{display:block;font-family:var(--serif);font-weight:400;font-size:1.04rem}
+.bc-side .fact span{color:var(--stone);font-size:.83rem}
+.btn{display:inline-block;background:var(--cedar);color:var(--cream);font-weight:600;font-size:.92rem;
+  padding:13px 24px;text-decoration:none;transition:background .22s,transform .18s}
+.btn:hover{background:var(--night);transform:translateY(-1px)}
+
+/* --- facts --- */
+.facts{display:grid;grid-template-columns:1fr;margin-top:40px;border-top:1px solid var(--line-l)}
+@media(min-width:720px){.facts{grid-template-columns:1fr 1fr}}
+.fr{display:flex;justify-content:space-between;gap:20px;padding:16px 0;border-bottom:1px solid var(--line-l)}
+@media(min-width:720px){.fr:nth-child(odd){padding-right:34px}.fr:nth-child(even){padding-left:34px}}
+.fr dt{color:var(--dim);font-size:.89rem}
+.fr dd{font-weight:500;font-size:.91rem;text-align:right}
+
+.contact{background:var(--night);color:var(--cream);border-bottom:0}
+.contact h2{color:var(--cream)}
+.contact .lede{color:var(--stone)}
+.mail{display:inline-block;margin-top:26px;font-family:var(--serif);font-size:clamp(1.25rem,3.2vw,1.85rem);
+  color:var(--cream);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:6px;transition:color .2s}
+.mail:hover{color:var(--gold)}
+
+footer{background:var(--night);color:var(--stone-dim);padding:32px 0 50px;font-size:.84rem;border-top:1px solid var(--line)}
+footer a{color:var(--stone)}
+.frow{display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:space-between;align-items:center}
+
+/* --- motion: one idea, used sparingly --- */
+.js .rise{opacity:0;transform:translateY(16px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.js .rise.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .js .rise{opacity:1;transform:none;transition:none}
+  .hero img{animation:none;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">
+      <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+        <path d="M13 37 L13 23 A11 11 0 0 1 35 23 L35 37 Z" fill="#C9BCA3"/>
+      </svg>
+      <b>Cedarstone Ventures<i>LLC</i></b>
+    </a>
+    <nav class="navlinks">
+      <a href="#what">What we do</a>
+      <a href="#brands">Brands</a>
+      <a href="#company">Company</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <div class="hero">
+    <picture>
+      <source media="(max-width:760px)" srcset="assets/hero-760.jpg">
+      <source media="(max-width:1280px)" srcset="assets/hero-1200.jpg">
+      <img src="assets/hero.jpg" alt="A quiet American residential street at dusk, lamplight in the windows." fetchpriority="high" width="2048" height="1152">
+    </picture>
+    <div class="wrap">
+      <p class="eyebrow">Holding company &middot; United States</p>
+      <h1>We build brands that make careful, useful things.</h1>
+      <p>Cedarstone Ventures is a small American company. We own and operate consumer brands, starting with one that helps landlords keep records their tax return can actually read.</p>
+      <div class="rule"></div>
+    </div>
+  </div>
+
+  <section class="s-tall" id="what">
+    <div class="wrap">
+      <div class="rise">
+        <p class="eyebrow">What we do</p>
+        <h2>One brand at a time, built to be genuinely better than what it replaces.</h2>
+        <p class="lede">We are deliberately small and deliberately slow to add things. A product only earns a place if it beats what a buyer would otherwise pick, side by side, on the shelf where they are actually choosing.</p>
+      </div>
+      <div class="ledger">
+        <div class="entry rise">
+          <div class="lbl"><span class="no">01</span><span>How we check</span></div>
+          <div>
+            <h3>Every figure traces to a primary source.</h3>
+            <p>Tax numbers come from the IRS instructions themselves, dated, and are re-checked when the rules move. When a mid-year rule change landed in 2026, our mileage pages carried both halves of the year before the books went to print. We would rather ship a smaller claim we can prove than a larger one we cannot.</p>
+          </div>
+        </div>
+        <div class="entry rise">
+          <div class="lbl"><span class="no">02</span><span>What we publish</span></div>
+          <div>
+            <h3>Fewer things, each one worth owning.</h3>
+            <p>A product that is merely present earns nothing and costs the brand that made it. So we would rather publish one title a year that beats what a buyer would otherwise pick, side by side, than fill a shelf with things nobody would choose twice.</p>
+          </div>
+        </div>
+        <div class="entry rise">
+          <div class="lbl"><span class="no">03</span><span>How we are judged</span></div>
+          <div>
+            <h3>We do not buy our reputation.</h3>
+            <p>No paid reviews, no incentives offered for ratings, no borrowed credibility. What people say about our products is theirs to say, including when it is critical, and a critical review from someone who really used the thing is more useful to the next buyer than a kind one.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="s-tall" id="brands">
+    <div class="wrap">
+      <div class="rise">
+        <p class="eyebrow">Brands</p>
+        <h2>Deedwell</h2>
+        <p class="lede">Rental bookkeeping and tax records for small landlords. Record books and tools built backwards from the tax return, so a year of receipts becomes a page you hand to your preparer.</p>
+      </div>
+      <div class="brandcard rise">
+        <div class="bc-body">
+          <h3>Deedwell</h3>
+          <p class="tag">Rental records &middot; United States</p>
+          <p>Deedwell makes record books for people who own one or a few rentals and do their own books. Every expense line is mapped to the IRS Schedule E line it belongs on, so nothing has to be reconstructed in April.</p>
+          <a class="btn" href="https://cedarstone-ventures.github.io/rental/">Visit Deedwell &rarr;</a>
+        </div>
+        <div class="bc-side">
+          <div class="fact"><b>Rental records</b><span>Category</span></div>
+          <div class="fact"><b>Small landlords, 1 to a few units</b><span>Who it is for</span></div>
+          <div class="fact"><b>Print and digital</b><span>Formats</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="s-mid" id="company">
+    <div class="wrap rise">
+      <p class="eyebrow">Company</p>
+      <h2>The details, plainly.</h2>
+      <p class="lede">We publish this so anyone who needs to verify us can, without asking.</p>
+      <dl class="facts">
+        <div class="fr"><dt>Legal name</dt><dd>Cedarstone Ventures LLC</dd></div>
+        <div class="fr"><dt>Entity type</dt><dd>Limited liability company</dd></div>
+        <div class="fr"><dt>Registered</dt><dd>New Mexico &amp; New Jersey, USA</dd></div>
+        <div class="fr"><dt>Markets served</dt><dd>United States</dd></div>
+        <div class="fr"><dt>Brands operated</dt><dd>Deedwell</dd></div>
+        <div class="fr"><dt>Contact</dt><dd><a href="mailto:info@cedarstonellc.com">info@cedarstonellc.com</a></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="contact s-mid" id="contact">
+    <div class="wrap rise">
+      <p class="eyebrow">Contact</p>
+      <h2>Reach a person.</h2>
+      <p class="lede">Press, partnerships, suppliers, or a question about something we made. One address, read by us.</p>
+      <a class="mail" href="mailto:info@cedarstonellc.com">info@cedarstonellc.com</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap frow">
+    <span>&copy; 2026 Cedarstone Ventures LLC. All rights reserved.</span>
+    <span><a href="/privacy.html">Privacy</a> &nbsp;&middot;&nbsp; <a href="/terms.html">Terms</a> &nbsp;&middot;&nbsp; <a href="mailto:info@cedarstonellc.com">info@cedarstonellc.com</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Content must never depend on this script to be READABLE. The .js gate means a
+  // no-JS or errored page shows everything; this only adds the reveal.
+  var els = document.querySelectorAll('.rise');
+  var revealAll = function(){ els.forEach(function(e){ e.classList.add('in'); }); };
+  window.addEventListener('error', revealAll);
+  // Failsafe: whatever happens, nothing stays invisible. Long enough that normal
+  // scrolling still gets the reveal, short enough that a stuck observer, a blocked
+  // script or a printing/reader mode can never leave the page blank.
+  setTimeout(revealAll, 6000);
+  if (!('IntersectionObserver' in window) ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    els.forEach(function(e){ e.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en, i){
+      if (en.isIntersecting) {
+        var d = en.target.classList.contains("entry") ? i * 80 : 0;
+        setTimeout(function(){ en.target.classList.add('in'); }, d);
+        io.unobserve(en.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+  els.forEach(function(e){ io.observe(e); });
+})();
+</script>
+
+</body>
+</html>

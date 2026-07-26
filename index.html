@@ -31,7 +31,7 @@
   }
 }
 </script>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='11' fill='%230E1712'/%3E%3Cpath d='M13 37 L13 23 A11 11 0 0 1 35 23 L35 37 Z' fill='%23C9BCA3'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='11' fill='%230E1712'/%3E%3Cpath d='M10 10 h28 v28 h-28 z' fill='none' stroke='%23C9BCA3' stroke-width='4'/%3E%3Cpath d='M10 26 h12 v12 h-12 z' fill='%23C9BCA3'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -43,19 +43,29 @@
   --ink:#15201A; --dim:#5B665E; --line:rgba(201,188,163,.20); --line-l:#E6E0D1;
   --gold:#B08F42; --gold-text:#8A6D1F;
   --serif:'Fraunces',Georgia,serif; --sans:'Inter',system-ui,-apple-system,sans-serif;
-  --wrap:1080px;
+  /* The shell GROWS with the viewport instead of stopping dead at 1080px, which on a
+     1920px screen used 56% of the width and left the rest empty. Text measures are
+     still capped per-element (ch units) so lines never become unreadable. */
+  --gutter:clamp(22px, 5vw, 96px);
+  --wrap:min(1440px, 100% - (var(--gutter) * 2));
 }
+@media(min-width:2000px){ :root{ --wrap:min(1700px, 100% - (var(--gutter) * 2)); } }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased}
-.wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+.wrap{width:var(--wrap);margin-inline:auto}
 h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.12;letter-spacing:-.016em}
 a{color:inherit}
 a:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
-img{max-width:100%;display:block}
+/* height:auto is load-bearing: without it a max-width'd <img> keeps the HTML height
+   attribute and the aspect ratio breaks (the brand card's book rendered 290x803). */
+img{max-width:100%;height:auto;display:block}
 .eyebrow{font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-text);font-weight:600}
 
-/* --- mark: a stone arch. Deliberately NOT stacked bars, which read as a menu icon. */
+/* --- mark: the cornerstone. A block with its foundation corner set proud - the first
+   stone laid, from which every later measurement is taken. Chosen over the previous
+   arch because the arch dissolved into an indistinct shape below ~30px; this holds its
+   silhouette at favicon size, which is where a mark actually has to survive. */
 .mark{width:30px;height:30px;flex:none;display:block}
 
 header{position:sticky;top:0;z-index:30;background:rgba(14,23,18,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
@@ -77,17 +87,37 @@ header{position:sticky;top:0;z-index:30;background:rgba(14,23,18,.92);backdrop-f
 .hero::after{content:"";position:absolute;inset:0;
   background:linear-gradient(100deg,rgba(14,23,18,.96) 0%,rgba(14,23,18,.82) 38%,rgba(14,23,18,.42) 70%,rgba(14,23,18,.62) 100%)}
 .hero .eyebrow,.contact .eyebrow{color:var(--gold)}
-.hero .wrap{position:relative;z-index:2;padding-top:120px;padding-bottom:76px}
-.hero h1{font-size:clamp(2.2rem,5.6vw,3.7rem);max-width:15ch;margin:20px 0 24px;color:var(--cream);font-weight:300}
-.hero p{color:var(--stone);font-size:clamp(1rem,2.1vw,1.16rem);max-width:52ch}
+.hero .wrap{position:relative;z-index:2;padding-top:130px;padding-bottom:84px;
+  display:grid;grid-template-columns:1fr;gap:44px;align-items:end}
+/* At desktop the hero uses the WHOLE canvas: statement left, standing facts right,
+   instead of one narrow column with 60% of the photograph carrying nothing. */
+@media(min-width:1040px){
+  .hero .wrap{grid-template-columns:minmax(0,1.35fr) minmax(300px,.65fr);gap:72px}
+}
+.hero h1{font-size:clamp(2.2rem,5.2vw,4.3rem);max-width:17ch;margin:20px 0 24px;color:var(--cream);font-weight:300}
+.hero p{color:var(--stone);font-size:clamp(1rem,1.6vw,1.22rem);max-width:56ch}
 .hero .rule{width:52px;height:2px;background:var(--gold);margin-top:32px}
+.standing{display:grid;gap:0;border-top:1px solid rgba(201,188,163,.34)}
+.standing div{display:flex;justify-content:space-between;gap:18px;align-items:baseline;
+  padding:14px 0;border-bottom:1px solid rgba(201,188,163,.18)}
+.standing dt{color:var(--stone-dim);font-size:.8rem;letter-spacing:.06em}
+.standing dd{color:var(--cream);font-size:.92rem;font-weight:500;text-align:right;font-variant-numeric:tabular-nums}
 
 /* --- sections: deliberately uneven rhythm --- */
 section{border-bottom:1px solid var(--line-l)}
 .s-tall{padding:104px 0}
 .s-mid{padding:78px 0}
-h2{font-size:clamp(1.55rem,3.6vw,2.2rem);margin:14px 0 18px;max-width:22ch}
+h2{font-size:clamp(1.55rem,3.2vw,2.6rem);margin:14px 0 18px;max-width:22ch}
 .lede{color:var(--dim);max-width:60ch;font-size:1.01rem}
+/* Section intros open into two columns on a wide screen - the claim on the left, the
+   qualification on the right - so the heading and its lede sit as a spread rather than
+   a narrow stack with half the screen empty beside it. */
+.intro .eyebrow,.intro .facts{grid-column:1 / -1}
+@media(min-width:1040px){
+  .intro{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:4px 76px;align-items:start}
+  .intro h2{margin-bottom:0;align-self:center}
+  .intro .lede{font-size:1.06rem;padding-top:6px}
+}
 
 /* --- the ledger.
    Deliberately NOT three cards in a grid: that is the default shape every AI site
@@ -102,10 +132,30 @@ h2{font-size:clamp(1.55rem,3.6vw,2.2rem);margin:14px 0 18px;max-width:22ch}
 .entry .lbl span{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);font-weight:600}
 .entry h3{font-family:var(--serif);font-weight:400;font-size:1.22rem;margin-bottom:9px;letter-spacing:-.012em;max-width:34ch;text-wrap:balance}
 .entry p{color:var(--dim);font-size:.95rem;max-width:56ch}
+/* On a wide screen the ledger opens into three columns - label | claim | evidence -
+   which is how a real ruled ledger reads, and it spends the width on content rather
+   than leaving it blank. No HTML change: the entry's content div becomes the grid. */
+@media(min-width:1240px){
+  .entry{grid-template-columns:14rem minmax(0,1fr)}
+  .entry > div:last-child{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:0 56px;align-items:start}
+  .entry h3{margin-bottom:0;max-width:22ch;font-size:1.3rem}
+  .entry p{max-width:64ch}
+}
 
 /* --- brand card --- */
 .brandcard{display:grid;grid-template-columns:1fr;border:1px solid var(--line-l);overflow:hidden;margin-top:42px;background:#fff}
 @media(min-width:840px){.brandcard{grid-template-columns:1.2fr .8fr}}
+/* Wide screens get the product itself in the card. A holding company that says it
+   makes careful things should show one, at size, rather than describe it. */
+@media(min-width:1180px){.brandcard{grid-template-columns:minmax(300px,.72fr) minmax(0,1.15fr) minmax(260px,.73fr)}}
+.bc-shot{background:var(--cream);display:flex;align-items:center;justify-content:center;padding:44px 40px;border-right:1px solid var(--line-l)}
+.bc-shot img{width:100%;max-width:290px;border-radius:3px;
+  box-shadow:0 2px 5px rgba(0,0,0,.16), 0 30px 56px -26px rgba(21,32,26,.6)}
+/* Show the product on mobile (card stacks) and on wide (card is 3-col). Hide it only
+   in the middle band where the card is 2-col and an image column would crowd it. */
+@media(min-width:840px) and (max-width:1179px){.bc-shot{display:none}}
+@media(max-width:839px){.bc-shot{border-right:0;border-bottom:1px solid var(--line-l);padding:34px 30px}
+  .bc-shot img{max-width:220px}}
 .bc-body{padding:46px}
 .bc-body h3{font-family:var(--serif);font-weight:400;font-size:1.8rem;margin-bottom:7px;letter-spacing:-.015em}
 .bc-body .tag{color:var(--dim);font-size:.88rem;margin-bottom:20px}
@@ -153,7 +203,7 @@ footer a{color:var(--stone)}
   <div class="wrap nav">
     <a class="brand" href="./">
       <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
-        <path d="M13 37 L13 23 A11 11 0 0 1 35 23 L35 37 Z" fill="#C9BCA3"/>
+        <path d="M9 9 h30 v30 h-30 z" fill="none" stroke="#C9BCA3" stroke-width="3.4"/><path d="M9 27 h12 v12 h-12 z" fill="#C9BCA3"/>
       </svg>
       <b>Cedarstone Ventures<i>LLC</i></b>
     </a>
@@ -175,16 +225,25 @@ footer a{color:var(--stone)}
       <img src="assets/hero.jpg" alt="A quiet American residential street at dusk, lamplight in the windows." fetchpriority="high" width="2048" height="1152">
     </picture>
     <div class="wrap">
-      <p class="eyebrow">Holding company &middot; United States</p>
-      <h1>We build brands that make careful, useful things.</h1>
-      <p>Cedarstone Ventures is a small American company. We own and operate consumer brands, starting with one that helps landlords keep records their tax return can actually read.</p>
-      <div class="rule"></div>
+      <div>
+        <p class="eyebrow">Holding company &middot; United States</p>
+        <h1>We build brands that make careful, useful things.</h1>
+        <p>Cedarstone Ventures is a small American company. We own and operate consumer brands, starting with one that helps landlords keep records their tax return can actually read.</p>
+        <div class="rule"></div>
+      </div>
+      <dl class="standing">
+        <div><dt>Entity</dt><dd>Limited liability company</dd></div>
+        <div><dt>Registered</dt><dd>New Mexico &amp; New Jersey</dd></div>
+        <div><dt>Markets served</dt><dd>United States</dd></div>
+        <div><dt>Brands operated</dt><dd>Deedwell</dd></div>
+        <div><dt>Enquiries</dt><dd><a href="mailto:info@cedarstonellc.com" style="color:inherit">info@cedarstonellc.com</a></dd></div>
+      </dl>
     </div>
   </div>
 
   <section class="s-tall" id="what">
     <div class="wrap">
-      <div class="rise">
+      <div class="rise intro">
         <p class="eyebrow">What we do</p>
         <h2>One brand at a time, built to be genuinely better than what it replaces.</h2>
         <p class="lede">We are deliberately small and deliberately slow to add things. A product only earns a place if it beats what a buyer would otherwise pick, side by side, on the shelf where they are actually choosing.</p>
@@ -217,12 +276,16 @@ footer a{color:var(--stone)}
 
   <section class="s-tall" id="brands">
     <div class="wrap">
-      <div class="rise">
+      <div class="rise intro">
         <p class="eyebrow">Brands</p>
         <h2>Deedwell</h2>
         <p class="lede">Rental bookkeeping and tax records for small landlords. Record books and tools built backwards from the tax return, so a year of receipts becomes a page you hand to your preparer.</p>
       </div>
       <div class="brandcard rise">
+        <div class="bc-shot">
+          <img src="assets/deedwell-book.jpg" width="620" height="803" loading="lazy" decoding="async"
+               alt="Deedwell's Rental Property Record Book: a lit cottage at dusk above a deep green band carrying the title in gold.">
+        </div>
         <div class="bc-body">
           <h3>Deedwell</h3>
           <p class="tag">Rental records &middot; United States</p>
@@ -239,7 +302,7 @@ footer a{color:var(--stone)}
   </section>
 
   <section class="s-mid" id="company">
-    <div class="wrap rise">
+    <div class="wrap rise intro">
       <p class="eyebrow">Company</p>
       <h2>The details, plainly.</h2>
       <p class="lede">We publish this so anyone who needs to verify us can, without asking.</p>

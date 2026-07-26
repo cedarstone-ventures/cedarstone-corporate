@@ -27,6 +27,7 @@
   "subOrganization": {
     "@type": "Organization",
     "name": "Deedwell",
+    "url": "https://deedwell.co/",
     "description": "Rental bookkeeping and tax records for small landlords."
   }
 }
@@ -56,7 +57,9 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-heigh
 .wrap{width:var(--wrap);margin-inline:auto}
 h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.12;letter-spacing:-.016em}
 a{color:inherit}
-a:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold-text);outline-offset:4px;border-radius:3px}
+/* on the dark bands --gold-text would be the one that fails; --gold is 5.96:1 there */
+.hero a:focus-visible,.contact a:focus-visible,footer a:focus-visible{outline-color:var(--gold)}
 /* height:auto is load-bearing: without it a max-width'd <img> keeps the HTML height
    attribute and the aspect ratio breaks (the brand card's book rendered 290x803). */
 img{max-width:100%;height:auto;display:block}
@@ -128,7 +131,7 @@ h2{font-size:clamp(1.55rem,3.2vw,2.6rem);margin:14px 0 18px;max-width:22ch}
 .entry{display:grid;grid-template-columns:1fr;gap:6px 40px;padding:30px 0 32px;border-bottom:1px solid var(--line-l)}
 @media(min-width:820px){.entry{grid-template-columns:12.5rem 1fr;gap:0 48px;padding:34px 0 36px}}
 .entry .lbl{display:flex;align-items:baseline;gap:12px}
-.entry .lbl span.no{font-family:var(--serif);font-size:.86rem;color:var(--gold);font-variant-numeric:tabular-nums;letter-spacing:.06em}
+.entry .lbl span.no{font-family:var(--serif);font-size:.86rem;color:var(--gold-text);font-variant-numeric:tabular-nums;letter-spacing:.06em}
 .entry .lbl span{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);font-weight:600}
 .entry h3{font-family:var(--serif);font-weight:400;font-size:1.22rem;margin-bottom:9px;letter-spacing:-.012em;max-width:34ch;text-wrap:balance}
 .entry p{color:var(--dim);font-size:.95rem;max-width:56ch}
@@ -253,7 +256,7 @@ footer a{color:var(--stone)}
           <div class="lbl"><span class="no">01</span><span>How we check</span></div>
           <div>
             <h3>Every figure traces to a primary source.</h3>
-            <p>Tax numbers come from the IRS instructions themselves, dated, and are re-checked when the rules move. When a mid-year rule change landed in 2026, our mileage pages carried both halves of the year before the books went to print. We would rather ship a smaller claim we can prove than a larger one we cannot.</p>
+            <p>Tax numbers come from the IRS instructions themselves, dated, and are re-checked when the rules move. When a mid-year rule change landed in 2026, our mileage pages carry both halves of the year, and will do so when the book goes to print. We would rather ship a smaller claim we can prove than a larger one we cannot.</p>
           </div>
         </div>
         <div class="entry rise">
@@ -295,7 +298,7 @@ footer a{color:var(--stone)}
         <div class="bc-side">
           <div class="fact"><b>Rental records</b><span>Category</span></div>
           <div class="fact"><b>Small landlords, 1 to a few units</b><span>Who it is for</span></div>
-          <div class="fact"><b>Print and digital</b><span>Formats</span></div>
+          <div class="fact"><b>Print, launching</b><span>Formats</span></div>
         </div>
       </div>
     </div>
@@ -320,7 +323,7 @@ footer a{color:var(--stone)}
   <section class="contact s-mid" id="contact">
     <div class="wrap rise">
       <p class="eyebrow">Contact</p>
-      <h2>Reach a person.</h2>
+      <h2>Reach us directly.</h2>
       <p class="lede">Press, partnerships, suppliers, or a question about something we made. One address, read by us.</p>
       <a class="mail" href="mailto:info@cedarstonellc.com">info@cedarstonellc.com</a>
     </div>

@@ -1,0 +1,326 @@
+{
+  "summary": {
+    "input_records": 12,
+    "ready": 5,
+    "duplicates": 1,
+    "review": 6,
+    "ready_by_source": {
+      "event": 1,
+      "referral": 2,
+      "website": 2
+    },
+    "rule_version": "1.0",
+    "input_sha256": "99a908ab1a79ed3c941cd07c5289b550c07cc87df6aad1043f54a2cbc773367b",
+    "scope": "Fictional batch example; no CRM write, contact verification or cross-batch state."
+  },
+  "records": [
+    {
+      "source_record": 2,
+      "original": {
+        "inquiry_id": "INQ-001",
+        "name": " Nora   Example ",
+        "email": "nora@EXAMPLE.INVALID",
+        "received_at": "2026-11-10T09:00:00-05:00",
+        "source": "Website",
+        "request": "Please quote a monthly report"
+      },
+      "normalized": {
+        "inquiry_id": "INQ-001",
+        "name": "Nora Example",
+        "email": "nora@example.invalid",
+        "received_at": "2026-11-10T14:00:00Z",
+        "source": "website",
+        "request": "Please quote a monthly report"
+      },
+      "status": "ready",
+      "reasons": []
+    },
+    {
+      "source_record": 3,
+      "original": {
+        "inquiry_id": "INQ-002",
+        "name": "Miles Example",
+        "email": "miles@example.invalid",
+        "received_at": "2026-11-10T15:00:00Z",
+        "source": "referral",
+        "request": "Help clean our enquiry list"
+      },
+      "normalized": {
+        "inquiry_id": "INQ-002",
+        "name": "Miles Example",
+        "email": "miles@example.invalid",
+        "received_at": "2026-11-10T15:00:00Z",
+        "source": "referral",
+        "request": "Help clean our enquiry list"
+      },
+      "status": "ready",
+      "reasons": []
+    },
+    {
+      "source_record": 4,
+      "original": {
+        "inquiry_id": "INQ-001",
+        "name": "Nora Example",
+        "email": "nora@example.invalid",
+        "received_at": "2026-11-10T14:00:00Z",
+        "source": "website",
+        "request": "Please quote a monthly report"
+      },
+      "normalized": {
+        "inquiry_id": "INQ-001",
+        "name": "Nora Example",
+        "email": "nora@example.invalid",
+        "received_at": "2026-11-10T14:00:00Z",
+        "source": "website",
+        "request": "Please quote a monthly report"
+      },
+      "status": "duplicate",
+      "reasons": [
+        "Exact normalized replay of record 2"
+      ]
+    },
+    {
+      "source_record": 5,
+      "original": {
+        "inquiry_id": "INQ-003",
+        "name": "Sam Example",
+        "email": "sam-at-example.invalid",
+        "received_at": "2026-11-10T16:00:00Z",
+        "source": "event",
+        "request": "Our form has stopped updating the sheet"
+      },
+      "normalized": {
+        "inquiry_id": "INQ-003",
+        "name": "Sam Example",
+        "email": "sam-at-example.invalid",
+        "received_at": "2026-11-10T16:00:00Z",
+        "source": "event",
+        "request": "Our form has stopped updating the sheet"
+      },
+      "status": "review",
+      "reasons": [
+        "Email format needs review"
+      ]
+    },
+    {
+      "source_record": 6,
+      "original": {
+        "inquiry_id": "INQ-004",
+        "name": "",
+        "email": "robin@example.invalid",
+        "received_at": "2026-11-10T17:00:00Z",
+        "source": "website",
+        "request": "Help with a report"
+      },
+      "normalized": {
+        "inquiry_id": "INQ-004",
+        "name": "",
+        "email": "robin@example.invalid",
+        "received_at": "2026-11-10T17:00:00Z",
+        "source": "website",
+        "request": "Help with a report"
+      },
+      "status": "review",
+      "reasons": [
+        "Missing name"
+      ]
+    },
+    {
+      "source_record": 7,
+      "original": {
+        "inquiry_id": "INQ-005",
+        "name": "Alex Example",
+        "email": "alex@example.invalid",
+        "received_at": "11/10/2026 10:00",
+        "source": "website",
+        "request": "Review our import file"
+      },
+      "normalized": {
+        "inquiry_id": "INQ-005",
+        "name": "Alex Example",
+        "email": "alex@example.invalid",
+        "received_at": "11/10/2026 10:00",
+        "source": "website",
+        "request": "Review our import file"
+      },
+      "status": "review",
+      "reasons": [
+        "Date needs ISO format and an explicit time zone"
+      ]
+    },
+    {
+      "source_record": 8,
+      "original": {
+        "inquiry_id": "INQ-006",
+        "name": "Jamie Example",
+        "email": "jamie@example.invalid",
+        "received_at": "2026-11-11T10:00:00Z",
+        "source": "Event",
+        "request": "Organise the event enquiries"
+      },
+      "normalized": {
+        "inquiry_id": "INQ-006",
+        "name": "Jamie Example",
+        "email": "jamie@example.invalid",
+        "received_at": "2026-11-11T10:00:00Z",
+        "source": "event",
+        "request": "Organise the event enquiries"
+      },
+      "status": "ready",
+      "reasons": []
+    },
+    {
+      "source_record": 9,
+      "original": {
+        "inquiry_id": "INQ-007",
+        "name": "Miles Example",
+        "email": "miles@example.invalid",
+        "received_at": "2026-11-11T11:00:00Z",
+        "source": "referral",
+        "request": "A separate enquiry about a different report"
+      },
+      "normalized": {
+        "inquiry_id": "INQ-007",
+        "name": "Miles Example",
+        "email": "miles@example.invalid",
+        "received_at": "2026-11-11T11:00:00Z",
+        "source": "referral",
+        "request": "A separate enquiry about a different report"
+      },
+      "status": "ready",
+      "reasons": []
+    },
+    {
+      "source_record": 10,
+      "original": {
+        "inquiry_id": "INQ-008",
+        "name": "Taylor Example",
+        "email": "taylor@example.invalid",
+        "received_at": "2026-11-11T12:00:00Z",
+        "source": "website",
+        "request": "Fix a duplicate record issue"
+      },
+      "normalized": {
+        "inquiry_id": "INQ-008",
+        "name": "Taylor Example",
+        "email": "taylor@example.invalid",
+        "received_at": "2026-11-11T12:00:00Z",
+        "source": "website",
+        "request": "Fix a duplicate record issue"
+      },
+      "status": "review",
+      "reasons": [
+        "Conflicting records share this inquiry ID"
+      ]
+    },
+    {
+      "source_record": 11,
+      "original": {
+        "inquiry_id": "INQ-008",
+        "name": "Taylor Example",
+        "email": "pat@example.invalid",
+        "received_at": "2026-11-11T12:00:00Z",
+        "source": "website",
+        "request": "Fix a duplicate record issue"
+      },
+      "normalized": {
+        "inquiry_id": "INQ-008",
+        "name": "Taylor Example",
+        "email": "pat@example.invalid",
+        "received_at": "2026-11-11T12:00:00Z",
+        "source": "website",
+        "request": "Fix a duplicate record issue"
+      },
+      "status": "review",
+      "reasons": [
+        "Conflicting records share this inquiry ID"
+      ]
+    },
+    {
+      "source_record": 12,
+      "original": {
+        "inquiry_id": "INQ-009",
+        "name": "Casey Example",
+        "email": "casey@example.invalid",
+        "received_at": "2026-11-11T13:00:00Z",
+        "source": "unknown",
+        "request": "Update a data export"
+      },
+      "normalized": {
+        "inquiry_id": "INQ-009",
+        "name": "Casey Example",
+        "email": "casey@example.invalid",
+        "received_at": "2026-11-11T13:00:00Z",
+        "source": "unknown",
+        "request": "Update a data export"
+      },
+      "status": "review",
+      "reasons": [
+        "Source must be website, referral or event"
+      ]
+    },
+    {
+      "source_record": 13,
+      "original": {
+        "inquiry_id": "INQ-010",
+        "name": "Avery Example",
+        "email": "avery@example.invalid",
+        "received_at": "2026-11-11T14:00:00Z",
+        "source": "website",
+        "request": "Prepare a clean import"
+      },
+      "normalized": {
+        "inquiry_id": "INQ-010",
+        "name": "Avery Example",
+        "email": "avery@example.invalid",
+        "received_at": "2026-11-11T14:00:00Z",
+        "source": "website",
+        "request": "Prepare a clean import"
+      },
+      "status": "ready",
+      "reasons": []
+    }
+  ],
+  "ready": [
+    {
+      "inquiry_id": "INQ-001",
+      "name": "Nora Example",
+      "email": "nora@example.invalid",
+      "received_at": "2026-11-10T14:00:00Z",
+      "source": "website",
+      "request": "Please quote a monthly report"
+    },
+    {
+      "inquiry_id": "INQ-002",
+      "name": "Miles Example",
+      "email": "miles@example.invalid",
+      "received_at": "2026-11-10T15:00:00Z",
+      "source": "referral",
+      "request": "Help clean our enquiry list"
+    },
+    {
+      "inquiry_id": "INQ-006",
+      "name": "Jamie Example",
+      "email": "jamie@example.invalid",
+      "received_at": "2026-11-11T10:00:00Z",
+      "source": "event",
+      "request": "Organise the event enquiries"
+    },
+    {
+      "inquiry_id": "INQ-007",
+      "name": "Miles Example",
+      "email": "miles@example.invalid",
+      "received_at": "2026-11-11T11:00:00Z",
+      "source": "referral",
+      "request": "A separate enquiry about a different report"
+    },
+    {
+      "inquiry_id": "INQ-010",
+      "name": "Avery Example",
+      "email": "avery@example.invalid",
+      "received_at": "2026-11-11T14:00:00Z",
+      "source": "website",
+      "request": "Prepare a clean import"
+    }
+  ]
+}

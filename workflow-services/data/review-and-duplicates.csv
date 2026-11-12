@@ -1,0 +1,8 @@
+source_record,status,inquiry_id,name,email,received_at,source,request,reason
+4,duplicate,INQ-001,Nora Example,nora@example.invalid,2026-11-10T14:00:00Z,website,Please quote a monthly report,Exact normalized replay of record 2
+5,review,INQ-003,Sam Example,sam-at-example.invalid,2026-11-10T16:00:00Z,event,Our form has stopped updating the sheet,Email format needs review
+6,review,INQ-004,,robin@example.invalid,2026-11-10T17:00:00Z,website,Help with a report,Missing name
+7,review,INQ-005,Alex Example,alex@example.invalid,11/10/2026 10:00,website,Review our import file,Date needs ISO format and an explicit time zone
+10,review,INQ-008,Taylor Example,taylor@example.invalid,2026-11-11T12:00:00Z,website,Fix a duplicate record issue,Conflicting records share this inquiry ID
+11,review,INQ-008,Taylor Example,pat@example.invalid,2026-11-11T12:00:00Z,website,Fix a duplicate record issue,Conflicting records share this inquiry ID
+12,review,INQ-009,Casey Example,casey@example.invalid,2026-11-11T13:00:00Z,unknown,Update a data export,"Source must be website, referral or event"

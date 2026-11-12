@@ -1,384 +1,324 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cedarstone Ventures LLC</title>
-<meta name="description" content="Cedarstone Ventures LLC is a small American holding company. We build and operate consumer brands that make careful, useful things - today, one: Deedwell. Registered in New Mexico and New Jersey.">
-<link rel="canonical" href="https://cedarstonellc.com/">
-<meta name="theme-color" content="#0E1712">
-<meta property="og:title" content="Cedarstone Ventures LLC">
-<meta property="og:description" content="A small American holding company. We build and operate consumer brands that make careful, useful things - today, one: Deedwell.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://cedarstonellc.com/">
-<meta property="og:site_name" content="Cedarstone Ventures LLC">
-<meta property="og:image" content="https://cedarstonellc.com/assets/hero-1200.jpg">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": "https://cedarstonellc.com/#org",
-  "name": "Cedarstone Ventures LLC",
-  "legalName": "Cedarstone Ventures LLC",
-  "url": "https://cedarstonellc.com/",
-  "email": "info@cedarstonellc.com",
-  "description": "A small American holding company that builds and operates consumer brands. One brand today: Deedwell.",
-  "areaServed": { "@type": "Country", "name": "United States" },
-  "subOrganization": {
-    "@type": "Organization",
-    "name": "Deedwell",
-    "url": "https://deedwell.co/",
-    "description": "Record books and guest books for small landlords and short-term-rental hosts."
-  }
-}
-</script>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='11' fill='%230E1712'/%3E%3Cpath d='M10 10 h28 v28 h-28 z' fill='none' stroke='%23C9BCA3' stroke-width='4'/%3E%3Cpath d='M10 26 h12 v12 h-12 z' fill='%23C9BCA3'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<script>document.documentElement.classList.add('js');</script>
-<style>
-:root{
-  --night:#0E1712; --night-2:#141F19; --cedar:#1F3D2F;
-  --stone:#C9BCA3; --stone-dim:#93A094; --cream:#F4F0E6; --paper:#FBF9F4;
-  --ink:#15201A; --dim:#5B665E; --line:rgba(201,188,163,.20); --line-l:#E6E0D1;
-  --gold:#B08F42; --gold-text:#8A6D1F;
-  --serif:'Fraunces',Georgia,serif; --sans:'Inter',system-ui,-apple-system,sans-serif;
-  /* The shell GROWS with the viewport instead of stopping dead at 1080px, which on a
-     1920px screen used 56% of the width and left the rest empty. Text measures are
-     still capped per-element (ch units) so lines never become unreadable. */
-  --gutter:clamp(22px, 5vw, 96px);
-  --wrap:min(1440px, 100% - (var(--gutter) * 2));
-}
-@media(min-width:2000px){ :root{ --wrap:min(1700px, 100% - (var(--gutter) * 2)); } }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased}
-.wrap{width:var(--wrap);margin-inline:auto}
-h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.12;letter-spacing:-.016em}
-a{color:inherit}
-a:focus-visible,button:focus-visible{outline:2px solid var(--gold-text);outline-offset:4px;border-radius:3px}
-/* on the dark bands --gold-text would be the one that fails; --gold is 5.96:1 there */
-.hero a:focus-visible,.contact a:focus-visible,footer a:focus-visible{outline-color:var(--gold)}
-/* height:auto is load-bearing: without it a max-width'd <img> keeps the HTML height
-   attribute and the aspect ratio breaks (the brand card's book rendered 290x803). */
-img{max-width:100%;height:auto;display:block}
-.eyebrow{font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-text);font-weight:600}
-
-/* --- mark: the cornerstone. A block with its foundation corner set proud - the first
-   stone laid, from which every later measurement is taken. Chosen over the previous
-   arch because the arch dissolved into an indistinct shape below ~30px; this holds its
-   silhouette at favicon size, which is where a mark actually has to survive. */
-.mark{width:30px;height:30px;flex:none;display:block}
-
-header{position:sticky;top:0;z-index:30;background:rgba(14,23,18,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-@supports not (backdrop-filter:blur(2px)){header{background:var(--night)}}
-.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
-.brand b{font-family:var(--serif);font-weight:400;font-size:1.2rem;color:var(--cream);white-space:nowrap;letter-spacing:.004em}
-.brand i{font-style:normal;color:var(--stone-dim);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;margin-left:5px}
-.navlinks{display:flex;gap:30px}
-.navlinks a{color:var(--stone);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s}
-.navlinks a:hover{color:var(--cream)}
-@media(max-width:780px){.navlinks{display:none}.brand i{display:none}}
-
-/* --- hero: one photograph, one sentence, nothing else --- */
-.hero{position:relative;background:var(--night);min-height:min(84vh,660px);display:flex;align-items:flex-end;overflow:hidden}
-.hero picture,.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero img{opacity:.62;transform:scale(1.04);animation:settle 2.4s cubic-bezier(.2,.7,.2,1) forwards}
-@keyframes settle{to{transform:scale(1)}}
-.hero::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(100deg,rgba(14,23,18,.96) 0%,rgba(14,23,18,.82) 38%,rgba(14,23,18,.42) 70%,rgba(14,23,18,.62) 100%)}
-.hero .eyebrow,.contact .eyebrow{color:var(--gold)}
-.hero .wrap{position:relative;z-index:2;padding-top:130px;padding-bottom:84px;
-  display:grid;grid-template-columns:1fr;gap:44px;align-items:end}
-/* At desktop the hero uses the WHOLE canvas: statement left, standing facts right,
-   instead of one narrow column with 60% of the photograph carrying nothing. */
-@media(min-width:1040px){
-  .hero .wrap{grid-template-columns:minmax(0,1.35fr) minmax(300px,.65fr);gap:72px}
-}
-.hero h1{font-size:clamp(2.2rem,5.2vw,4.3rem);max-width:17ch;margin:20px 0 24px;color:var(--cream);font-weight:300}
-.hero p{color:var(--stone);font-size:clamp(1rem,1.6vw,1.22rem);max-width:56ch}
-.hero .rule{width:52px;height:2px;background:var(--gold);margin-top:32px}
-.standing{display:grid;gap:0;border-top:1px solid rgba(201,188,163,.34)}
-.standing div{display:flex;justify-content:space-between;gap:18px;align-items:baseline;
-  padding:14px 0;border-bottom:1px solid rgba(201,188,163,.18)}
-.standing dt{color:var(--stone-dim);font-size:.8rem;letter-spacing:.06em}
-.standing dd{color:var(--cream);font-size:.92rem;font-weight:500;text-align:right;font-variant-numeric:tabular-nums}
-
-/* --- sections: deliberately uneven rhythm --- */
-section{border-bottom:1px solid var(--line-l)}
-.s-tall{padding:104px 0}
-.s-mid{padding:78px 0}
-h2{font-size:clamp(1.55rem,3.2vw,2.6rem);margin:14px 0 18px;max-width:22ch}
-.lede{color:var(--dim);max-width:60ch;font-size:1.01rem}
-/* Section intros open into two columns on a wide screen - the claim on the left, the
-   qualification on the right - so the heading and its lede sit as a spread rather than
-   a narrow stack with half the screen empty beside it. */
-.intro .eyebrow,.intro .facts{grid-column:1 / -1}
-@media(min-width:1040px){
-  .intro{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:4px 76px;align-items:start}
-  .intro h2{margin-bottom:0;align-self:center}
-  .intro .lede{font-size:1.06rem;padding-top:6px}
-}
-
-/* --- the ledger.
-   Deliberately NOT three cards in a grid: that is the default shape every AI site
-   lands on. This company keeps records for a living, so its own world is ruled
-   columns and entries in a book. Full-bleed rules, a marginal label, one entry per
-   row, tabular figures. It is the structure the subject already owns. */
-.ledger{margin-top:52px;border-top:1.5px solid var(--ink)}
-.entry{display:grid;grid-template-columns:1fr;gap:6px 40px;padding:30px 0 32px;border-bottom:1px solid var(--line-l)}
-@media(min-width:820px){.entry{grid-template-columns:12.5rem 1fr;gap:0 48px;padding:34px 0 36px}}
-.entry .lbl{display:flex;align-items:baseline;gap:12px}
-.entry .lbl span.no{font-family:var(--serif);font-size:.86rem;color:var(--gold-text);font-variant-numeric:tabular-nums;letter-spacing:.06em}
-.entry .lbl span{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);font-weight:600}
-.entry h3{font-family:var(--serif);font-weight:400;font-size:1.22rem;margin-bottom:9px;letter-spacing:-.012em;max-width:34ch;text-wrap:balance}
-.entry p{color:var(--dim);font-size:.95rem;max-width:56ch}
-/* On a wide screen the ledger opens into three columns - label | claim | evidence -
-   which is how a real ruled ledger reads, and it spends the width on content rather
-   than leaving it blank. No HTML change: the entry's content div becomes the grid. */
-@media(min-width:1240px){
-  .entry{grid-template-columns:14rem minmax(0,1fr)}
-  .entry > div:last-child{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:0 56px;align-items:start}
-  .entry h3{margin-bottom:0;max-width:22ch;font-size:1.3rem}
-  .entry p{max-width:64ch}
-}
-
-/* --- brand card --- */
-.brandcard{display:grid;grid-template-columns:1fr;border:1px solid var(--line-l);overflow:hidden;margin-top:42px;background:#fff}
-@media(min-width:840px){.brandcard{grid-template-columns:1.2fr .8fr}}
-/* Wide screens get the product itself in the card. A holding company that says it
-   makes careful things should show one, at size, rather than describe it. */
-@media(min-width:1180px){.brandcard{grid-template-columns:minmax(300px,.72fr) minmax(0,1.15fr) minmax(260px,.73fr)}}
-.bc-shot{background:var(--cream);display:flex;align-items:center;justify-content:center;padding:44px 40px;border-right:1px solid var(--line-l)}
-.bc-shot img{width:100%;max-width:290px;border-radius:3px;
-  box-shadow:0 2px 5px rgba(0,0,0,.16), 0 30px 56px -26px rgba(21,32,26,.6)}
-/* Show the product on mobile (card stacks) and on wide (card is 3-col). Hide it only
-   in the middle band where the card is 2-col and an image column would crowd it. */
-@media(min-width:840px) and (max-width:1179px){.bc-shot{display:none}}
-@media(max-width:839px){.bc-shot{border-right:0;border-bottom:1px solid var(--line-l);padding:34px 30px}
-  .bc-shot img{max-width:220px}}
-.bc-body{padding:46px}
-.bc-body h3{font-family:var(--serif);font-weight:400;font-size:1.8rem;margin-bottom:7px;letter-spacing:-.015em}
-.bc-body .tag{color:var(--dim);font-size:.88rem;margin-bottom:20px}
-.bc-body p{color:var(--dim);font-size:.95rem;margin-bottom:26px}
-.bc-side{background:var(--cedar);color:var(--cream);padding:46px;display:flex;flex-direction:column;justify-content:center;gap:18px}
-.bc-side .fact{border-left:2px solid var(--gold);padding-left:15px}
-.bc-side .fact b{display:block;font-family:var(--serif);font-weight:400;font-size:1.04rem}
-.bc-side .fact span{color:var(--stone);font-size:.83rem}
-.btn{display:inline-block;background:var(--cedar);color:var(--cream);font-weight:600;font-size:.92rem;
-  padding:13px 24px;text-decoration:none;transition:background .22s,transform .18s}
-.btn:hover{background:var(--night);transform:translateY(-1px)}
-
-/* --- facts --- */
-.facts{display:grid;grid-template-columns:1fr;margin-top:40px;border-top:1px solid var(--line-l)}
-@media(min-width:720px){.facts{grid-template-columns:1fr 1fr}}
-.fr{display:flex;justify-content:space-between;gap:20px;padding:16px 0;border-bottom:1px solid var(--line-l)}
-@media(min-width:720px){.fr:nth-child(odd){padding-right:34px}.fr:nth-child(even){padding-left:34px}}
-.fr dt{color:var(--dim);font-size:.89rem}
-.fr dd{font-weight:500;font-size:.91rem;text-align:right}
-
-.contact{background:var(--night);color:var(--cream);border-bottom:0}
-.contact h2{color:var(--cream)}
-.contact .lede{color:var(--stone)}
-.mail{display:inline-block;margin-top:26px;font-family:var(--serif);font-size:clamp(1.25rem,3.2vw,1.85rem);
-  color:var(--cream);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:6px;transition:color .2s}
-.mail:hover{color:var(--gold)}
-
-footer,footer p{background:transparent;color:var(--stone-dim)}
-footer{background:var(--night);color:var(--stone-dim);padding:32px 0 50px;font-size:.86rem;border-top:1px solid var(--line)}
-footer a{color:var(--stone)}
-.frow{display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:space-between;align-items:center}
-
-/* --- motion: one idea, used sparingly --- */
-.js .rise{opacity:0;transform:translateY(16px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
-.js .rise.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){
-  .js .rise{opacity:1;transform:none;transition:none}
-  .hero img{animation:none;transform:none}
-}
-</style>
-</head>
-<body>
-
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="./">
-      <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
-        <path d="M9 9 h30 v30 h-30 z" fill="none" stroke="#C9BCA3" stroke-width="3.4"/><path d="M9 27 h12 v12 h-12 z" fill="#C9BCA3"/>
-      </svg>
-      <b>Cedarstone Ventures<i>LLC</i></b>
-    </a>
-    <nav class="navlinks">
-      <a href="#what">What we do</a>
-      <a href="#brands">Brands</a>
-      <a href="workflow-services/">Services</a>
-      <a href="#company">Company</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-
-  <div class="hero">
-    <picture>
-      <source media="(max-width:760px)" srcset="assets/hero-760.jpg">
-      <source media="(max-width:1280px)" srcset="assets/hero-1200.jpg">
-      <img src="assets/hero.jpg" alt="A quiet American residential street at dusk, lamplight in the windows." fetchpriority="high" width="2048" height="1152">
-    </picture>
-    <div class="wrap">
-      <div>
-        <p class="eyebrow">Holding company &middot; United States</p>
-        <h1>We build brands that make careful, useful things.</h1>
-        <p>Cedarstone Ventures is a small American company. We own and operate consumer brands, starting with one that helps landlords keep records their tax return can actually read.</p>
-        <div class="rule"></div>
-      </div>
-      <dl class="standing">
-        <div><dt>Entity</dt><dd>Limited liability company</dd></div>
-        <div><dt>Registered</dt><dd>New Mexico &amp; New Jersey</dd></div>
-        <div><dt>Markets served</dt><dd>United States</dd></div>
-        <div><dt>Brands operated</dt><dd>Deedwell</dd></div>
-        <div><dt>Services</dt><dd><a href="workflow-services/" style="color:inherit">Workflow &amp; data services</a></dd></div>
-        <div><dt>Enquiries</dt><dd><a href="mailto:info@cedarstonellc.com" style="color:inherit">info@cedarstonellc.com</a></dd></div>
-      </dl>
-    </div>
-  </div>
-
-  <section class="s-tall" id="what">
-    <div class="wrap">
-      <div class="rise intro">
-        <p class="eyebrow">What we do</p>
-        <h2>One brand at a time, built to be genuinely better than what it replaces.</h2>
-        <p class="lede">We are deliberately small and deliberately slow to add things. A product only earns a place if it beats what a buyer would otherwise pick, side by side, on the shelf where they are actually choosing.</p>
-      </div>
-      <div class="ledger">
-        <div class="entry rise">
-          <div class="lbl"><span class="no">01</span><span>How we check</span></div>
-          <div>
-            <h3>Every figure traces to a primary source.</h3>
-            <p>Tax numbers come from the IRS instructions themselves, dated, and are re-checked when the rules move. When a mid-year rule change landed in 2026, our mileage pages carry both halves of the year, and will do so when the book goes to print. We would rather ship a smaller claim we can prove than a larger one we cannot.</p>
-          </div>
-        </div>
-        <div class="entry rise">
-          <div class="lbl"><span class="no">02</span><span>What we publish</span></div>
-          <div>
-            <h3>Fewer things, each one worth owning.</h3>
-            <p>A product that is merely present earns nothing and costs the brand that made it. So we focus on practical titles designed around a clear everyday task, and our attention goes to the few that buyers keep choosing.</p>
-          </div>
-        </div>
-        <div class="entry rise">
-          <div class="lbl"><span class="no">03</span><span>How we are judged</span></div>
-          <div>
-            <h3>We do not buy our reputation.</h3>
-            <p>No paid reviews, no incentives offered for ratings, no borrowed credibility. What people say about our products is theirs to say, including when it is critical, and a critical review from someone who really used the thing is more useful to the next buyer than a kind one.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="s-tall" id="brands">
-    <div class="wrap">
-      <div class="rise intro">
-        <p class="eyebrow">Brands</p>
-        <h2>Deedwell</h2>
-        <p class="lede">Record books and guest books for small rental owners: landlords with one to a few units, and short-term-rental hosts. Built backwards from the job they have to do, whether that is a Schedule E or a guest turnover.</p>
-      </div>
-      <div class="brandcard rise">
-        <div class="bc-shot">
-          <img src="assets/deedwell-book.jpg" width="620" height="809" loading="lazy" decoding="async"
-               alt="Deedwell's Rental Property Record Book: a lit cottage at dusk above a deep green band carrying the title in gold.">
-        </div>
-        <div class="bc-body">
-          <h3>Deedwell</h3>
-          <p class="tag">Rental records &amp; hosting &middot; United States</p>
-          <p>Deedwell makes record books for people who own one or a few rentals and do their own books. The expense log is organized around Schedule E categories to help owners prepare records for their tax preparer. For short-term-rental hosts and the companies that manage their properties, Deedwell makes guest books that keep each property&rsquo;s house information and guest notes in one place.</p>
-          <a class="btn" href="https://deedwell.co">Visit Deedwell &rarr;</a>
-        </div>
-        <div class="bc-side">
-          <div class="fact"><b>Rental records &amp; hosting</b><span>Category</span></div>
-          <div class="fact"><b>Small landlords and short-term-rental hosts</b><span>Who it is for</span></div>
-          <div class="fact"><b>Paperback and Kindle eBook</b><span>Formats</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="s-tall" id="services">
-    <div class="wrap">
-      <p class="eyebrow">Business services</p>
-      <h2>Workflow repairs, clearer data and repeatable reports.</h2>
-      <p class="lede">For small teams with a defined operational problem. We agree the scope and price, preserve the source records, and hand over results you can check.</p>
-      <p style="margin-top:24px"><a href="workflow-services/">Explore Cedarstone Workflow &amp; Data Services &rarr;</a></p>
-      <p style="margin-top:14px"><a href="workflow-services/example.html">Inspect a fictional worked example &rarr;</a></p>
-    </div>
-  </section>
-
-  <section class="s-mid" id="company">
-    <div class="wrap rise intro">
-      <p class="eyebrow">Company</p>
-      <h2>The details, plainly.</h2>
-      <p class="lede">We publish this so anyone who needs to verify us can, without asking.</p>
-      <dl class="facts">
-        <div class="fr"><dt>Legal name</dt><dd>Cedarstone Ventures LLC</dd></div>
-        <div class="fr"><dt>Entity type</dt><dd>Limited liability company</dd></div>
-        <div class="fr"><dt>Registered</dt><dd>New Mexico &amp; New Jersey, USA</dd></div>
-        <div class="fr"><dt>Based in</dt><dd>Newark, New Jersey</dd></div>
-        <div class="fr"><dt>Markets served</dt><dd>United States</dd></div>
-        <div class="fr"><dt>Brands operated</dt><dd>Deedwell</dd></div>
-        <div class="fr"><dt>Contact</dt><dd><a href="mailto:info@cedarstonellc.com">info@cedarstonellc.com</a></dd></div>
-      </dl>
-    </div>
-  </section>
-
-  <section class="contact s-mid" id="contact">
-    <div class="wrap rise">
-      <p class="eyebrow">Contact</p>
-      <h2>Reach us directly.</h2>
-      <p class="lede">Press, partnerships, suppliers, or a question about something we made. One address, read by our founder, Ayobami Olanrewaju. Ordering 10 or more Deedwell books for properties you manage? <a href="https://deedwell.co/business/" style="color:inherit;text-decoration:underline">See how bulk orders work &rarr;</a></p>
-      <a class="mail" href="mailto:info@cedarstonellc.com">info@cedarstonellc.com</a>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <div class="wrap frow">
-    <span>&copy; 2026 Cedarstone Ventures LLC. All rights reserved.</span>
-    <span><a href="privacy.html">Privacy</a> &nbsp;&middot;&nbsp; <a href="terms.html">Terms</a> &nbsp;&middot;&nbsp; <a href="mailto:info@cedarstonellc.com">info@cedarstonellc.com</a></span>
-  </div>
-</footer>
-
-<script>
-(function(){
-  // Content must never depend on this script to be READABLE. The .js gate means a
-  // no-JS or errored page shows everything; this only adds the reveal.
-  var els = document.querySelectorAll('.rise');
-  var revealAll = function(){ els.forEach(function(e){ e.classList.add('in'); }); };
-  window.addEventListener('error', revealAll);
-  // Failsafe: whatever happens, nothing stays invisible. Long enough that normal
-  // scrolling still gets the reveal, short enough that a stuck observer, a blocked
-  // script or a printing/reader mode can never leave the page blank.
-  setTimeout(revealAll, 6000);
-  if (!('IntersectionObserver' in window) ||
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    els.forEach(function(e){ e.classList.add('in'); });
-    return;
-  }
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(en, i){
-      if (en.isIntersecting) {
-        var d = en.target.classList.contains("entry") ? i * 80 : 0;
-        setTimeout(function(){ en.target.classList.add('in'); }, d);
-        io.unobserve(en.target);
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self' 'sha256-eHN7pwRE325eVLnfN3QOQ0ml9M1v17XHA1+0KDP9srs='; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; object-src 'none'; form-action 'none'"
+    />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#112a22" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>Cedarstone Ventures LLC | Workflow & Data Services</title>
+    <meta
+      name="description"
+      content="Enquiry data preparation, repeatable reporting and assessed workflow repairs for small service teams. Defined scope, fixed quotes and checked handovers."
+    />
+    <link rel="canonical" href="https://cedarstonellc.com/" />
+    <meta
+      property="og:title"
+      content="Cedarstone Ventures LLC | Workflow & Data Services"
+    />
+    <meta
+      property="og:description"
+      content="Enquiry data preparation, repeatable reporting and assessed workflow repairs for small service teams. Defined scope, fixed quotes and checked handovers."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cedarstonellc.com/" />
+    <meta property="og:site_name" content="Cedarstone Ventures LLC" />
+    <link rel="icon" href="/assets/cedarstone-mark.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/workflow-services/style.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://cedarstonellc.com/#company",
+        "name": "Cedarstone Ventures LLC",
+        "legalName": "Cedarstone Ventures LLC",
+        "url": "https://cedarstonellc.com/",
+        "email": "info@cedarstonellc.com",
+        "description": "Workflow and data services for small service teams."
       }
-    });
-  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-  els.forEach(function(e){ io.observe(e); });
-})();
-</script>
-
-</body>
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header>
+      <div class="wrap nav">
+        <a class="brand" href="/"
+          ><svg viewBox="0 0 40 40" aria-hidden="true">
+            <rect
+              x="3"
+              y="3"
+              width="34"
+              height="34"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+            />
+            <path d="M3 23H17V37H3Z" fill="currentColor" /></svg
+          ><span>Cedarstone<small>VENTURES LLC</small></span></a
+        >
+        <nav class="navlinks" aria-label="Main navigation">
+          <a href="/workflow-services/">Services</a
+          ><a href="/workflow-services/example.html">Worked example</a
+          ><a href="/#company">Company</a><a href="/#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div>
+            <h1>Clean enquiry data.<br />Repeatable reports.</h1>
+            <p class="lead">
+              Cedarstone Ventures LLC helps small service teams prepare enquiry
+              data, build repeatable reports and repair defined workflow
+              failures.
+            </p>
+            <div class="actions">
+              <a class="button" href="#contact">Discuss your project</a
+              ><a
+                class="button secondary"
+                href="/workflow-services/example.html"
+                >View a worked example</a
+              >
+            </div>
+            <p class="note">
+              A written scope, a fixed quote and results you can check.
+            </p>
+          </div>
+          <div
+            class="sample-card"
+            role="group"
+            aria-label="Illustrative enquiry quality report"
+          >
+            <div class="sample-top">
+              <span><span class="dot"></span>Enquiry quality check</span
+              ><span>Fictional example</span>
+            </div>
+            <h2>Every record accounted for.</h2>
+            <div class="mini-row">
+              <span>Complete enquiry</span><span class="pill">Ready</span>
+            </div>
+            <div class="mini-row">
+              <span>Same enquiry submitted twice</span
+              ><span class="pill duplicate">Duplicate</span>
+            </div>
+            <div class="mini-row">
+              <span>Two emails, one enquiry ID</span
+              ><span class="pill review">Review</span>
+            </div>
+            <div class="mini-row">
+              <span>Date could mean two things</span
+              ><span class="pill review">Review</span>
+            </div>
+            <div class="sample-footer">
+              <span>Originals preserved</span><span>Decisions documented</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="services">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>Make the next step in your process easier.</h2>
+            <p>
+              Start with a specific problem in the tools your team already uses.
+              We check the existing options before proposing a custom change.
+            </p>
+          </div>
+          <article class="service">
+            <div>
+              <h3>Enquiry data preparation</h3>
+              <p>A consistent file your team can review and import.</p>
+            </div>
+            <p class="scope">
+              Agreed formatting and duplicate rules, a prepared export and a
+              record of exceptions. Originals are preserved.
+            </p>
+            <div class="price">From $250<small>Bounded scope · USD</small></div>
+          </article>
+          <article class="service">
+            <div>
+              <h3>Repeatable reporting</h3>
+              <p>A report you can refresh and verify.</p>
+            </div>
+            <p class="scope">
+              Defined measures, source checks and clear refresh instructions,
+              built around an agreed business question.
+            </p>
+            <div class="price">By quote<small>After scope review</small></div>
+          </article>
+          <article class="service">
+            <div>
+              <h3>Workflow repair</h3>
+              <p>Resolve a defined failure in an existing process.</p>
+            </div>
+            <p class="scope">
+              We assess the platform and access first, then agree the change,
+              checks, rollback and handover.
+            </p>
+            <div class="price">By quote<small>After assessment</small></div>
+          </article>
+          <div class="actions">
+            <a class="button secondary" href="/workflow-services/"
+              >Compare scopes and deliverables</a
+            >
+          </div>
+        </div>
+      </section>
+      <section class="section tinted">
+        <div class="wrap proof-grid">
+          <div>
+            <h2>See what happens to every record.</h2>
+            <p>
+              Explore a fictional enquiry list with repeated submissions,
+              conflicting details and ambiguous dates. Inspect the decisions and
+              download the input and outputs.
+            </p>
+            <div class="actions">
+              <a class="button" href="/workflow-services/example.html"
+                >Inspect the example</a
+              >
+            </div>
+            <p class="note">
+              An internal demonstration using fictional records. It is not a
+              client case study.
+            </p>
+          </div>
+          <div class="proof-note">
+            <h3>The decisions stay visible.</h3>
+            <ul>
+              <li>Ready records are separated from exceptions.</li>
+              <li>Conflicts are held for review.</li>
+              <li>Original values and changes remain traceable.</li>
+              <li>The output can be reproduced.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="process">
+        <div class="wrap">
+          <h2>Know what is included before work begins.</h2>
+          <div class="steps">
+            <article class="step">
+              <span>01 / Understand</span>
+              <h3>Describe the problem.</h3>
+              <p>
+                Start with the task, the tools and the result you need. A
+                description or redacted example is enough.
+              </p>
+            </article>
+            <article class="step">
+              <span>02 / Agree</span>
+              <h3>Set the scope.</h3>
+              <p>
+                Confirm the deliverables, price, timing, access and acceptance
+                checks in writing.
+              </p>
+            </article>
+            <article class="step">
+              <span>03 / Deliver</span>
+              <h3>Check the work.</h3>
+              <p>
+                Changes begin on a copy or in an agreed test environment.
+                Exceptions and decisions are recorded.
+              </p>
+            </article>
+            <article class="step">
+              <span>04 / Hand over</span>
+              <h3>Keep control.</h3>
+              <p>
+                Receive the result, the instructions and the agreed revision and
+                defect-correction terms.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="company">
+        <div class="wrap about">
+          <div><h2>Built around clear responsibility.</h2></div>
+          <div>
+            <p>
+              <strong
+                >Cedarstone Ventures LLC is led by founder Ayobami
+                Olanrewaju.</strong
+              >
+              The company is based in Newark, New Jersey, and serves business
+              clients with focused workflow and data services.
+            </p>
+            <dl class="company-facts">
+              <div>
+                <dt>Legal name</dt>
+                <dd>Cedarstone Ventures LLC</dd>
+              </div>
+              <div>
+                <dt>Entity</dt>
+                <dd>U.S. limited liability company</dd>
+              </div>
+              <div>
+                <dt>Base</dt>
+                <dd>Newark, New Jersey</dd>
+              </div>
+              <div>
+                <dt>Contact</dt>
+                <dd>
+                  <a href="mailto:info@cedarstonellc.com"
+                    >info@cedarstonellc.com</a
+                  >
+                </dd>
+              </div>
+            </dl>
+            <p>
+              We use software and AI tools for research, development and
+              documentation. Client records stay out of AI models and are
+              processed only with reviewed local scripts, under agreed handling
+              arrangements.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="contact" id="contact">
+        <div class="wrap grid">
+          <div>
+            <h2>Tell us what your team needs to fix.</h2>
+            <p>
+              Describe the task, the tools involved and what a useful result
+              would look like.
+            </p>
+            <div class="actions">
+              <a
+                class="button"
+                href="mailto:info@cedarstonellc.com?subject=Cedarstone%20project%20enquiry&amp;body=Task%20or%20problem%3A%0A%0ATools%20involved%3A%0A%0AExpected%20result%3A%0A%0ATiming%20and%20budget%3A%0A"
+                >Write a project enquiry</a
+              >
+            </div>
+            <p class="note">info@cedarstonellc.com · Opens your email app.</p>
+          </div>
+          <div>
+            <h3>Start with a description.</h3>
+            <p>
+              Please do not attach client records, passwords or financial
+              account details. We agree access and file handling before any real
+              project data is shared.
+            </p>
+            <p class="note">
+              Email first. A short scoping call can follow if useful.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="wrap">
+        <span>© 2026 Cedarstone Ventures LLC</span>
+        <nav aria-label="Footer">
+          <a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a
+          ><a href="mailto:info@cedarstonellc.com">Contact</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
 </html>

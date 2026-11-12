@@ -1,0 +1,13 @@
+inquiry_id,name,email,received_at,source,request
+INQ-001, Nora   Example ,nora@EXAMPLE.INVALID,2026-11-10T09:00:00-05:00,Website,Please quote a monthly report
+INQ-002,Miles Example,miles@example.invalid,2026-11-10T15:00:00Z,referral,Help clean our enquiry list
+INQ-001,Nora Example,nora@example.invalid,2026-11-10T14:00:00Z,website,Please quote a monthly report
+INQ-003,Sam Example,sam-at-example.invalid,2026-11-10T16:00:00Z,event,Our form has stopped updating the sheet
+INQ-004,,robin@example.invalid,2026-11-10T17:00:00Z,website,Help with a report
+INQ-005,Alex Example,alex@example.invalid,11/10/2026 10:00,website,Review our import file
+INQ-006,Jamie Example,jamie@example.invalid,2026-11-11T10:00:00Z,Event,Organise the event enquiries
+INQ-007,Miles Example,miles@example.invalid,2026-11-11T11:00:00Z,referral,A separate enquiry about a different report
+INQ-008,Taylor Example,taylor@example.invalid,2026-11-11T12:00:00Z,website,Fix a duplicate record issue
+INQ-008,Taylor Example,pat@example.invalid,2026-11-11T12:00:00Z,website,Fix a duplicate record issue
+INQ-009,Casey Example,casey@example.invalid,2026-11-11T13:00:00Z,unknown,Update a data export
+INQ-010,Avery Example,avery@example.invalid,2026-11-11T14:00:00Z,website,Prepare a clean import

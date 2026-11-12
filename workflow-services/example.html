@@ -1,1 +1,145 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A worked enquiry-cleanup example | Cedarstone</title><link rel="stylesheet" href="style.css"><script src="example.js" defer></script><link rel="canonical" href="https://cedarstonellc.com/workflow-services/example.html"></head><body><a class="skip" href="#main">Skip to content</a><header><div class="wrap nav"><a class="brand" href="index.html"><span>Cedarstone<small>VENTURES LLC</small></span></a><nav class="navlinks" aria-label="Main navigation"><a href="index.html#services">Services</a><a href="index.html#contact">Discuss your process ↗</a></nav></div></header><main id="main" class="wrap document"><a class="back" href="index.html">← Back to services</a><p class="eyebrow" style="margin-top:30px">Internal demonstration · Fictional records</p><h1>From a messy enquiry list<br>to a checkable result.</h1><p>Imagine a small team combining enquiries from a website, referrals and an event. A repeated submission inflates the count, dates arrive in different formats, and one enquiry ID has two conflicting email addresses.</p><p>This is the saved output of a local processing run on 12 fictional records. Explore the decisions below or download the source and results. No customer system is connected.</p><div class="stats" id="counts"><div class="stat"><strong>12</strong><span>Input records</span></div><div class="stat"><strong>5</strong><span>Ready</span></div><div class="stat"><strong>1</strong><span>Duplicate</span></div><div class="stat"><strong>6</strong><span>Review</span></div></div><div class="toolbar"><label for="status-filter">Show records <select id="status-filter"><option value="all">All decisions</option><option value="ready">Ready</option><option value="duplicate">Duplicates</option><option value="review">Needs review</option></select></label><span class="status" id="row-count" aria-live="polite">Loading results…</span></div><div id="error" role="alert" hidden></div><div class="table-scroll"><table><caption>Every input record retains its source reference. Record 1 is the column header.</caption><thead><tr><th scope="col">Record</th><th scope="col">Enquiry ID</th><th scope="col">Contact</th><th scope="col">Decision</th><th scope="col">What happened</th></tr></thead><tbody id="records"></tbody></table></div><noscript><p>The interactive table needs JavaScript. All results are available in the downloadable CSV files below.</p></noscript><div class="file-links"><a href="data/inquiries-fictional.csv" download>Original fictional input CSV ↓</a><a href="data/ready.csv" download>Prepared records CSV ↓</a><a href="data/review-and-duplicates.csv" download>Exceptions and duplicates CSV ↓</a><a href="data/result.json" download>Full decision record JSON ↓</a></div><h2>The rules make the difference.</h2><p>A matching enquiry ID and identical normalized content count as an exact replay. Two different records with the same ID are both held for review. A shared email alone does not make two enquiries duplicates.</p><p>Whitespace and source labels are standardized. Dates are converted to UTC only when an explicit time zone is present. Missing details and ambiguous dates are flagged; they are not invented. The original file is preserved.</p><h2>What this demonstrates</h2><p>The example covers preparation, duplicate handling, exceptions, record counts and a repeatable handover. The same input produces the same output. The automated checks also cover malformed records and preserving prior results.</p><p class="limits">This is a batch preparation example, not a live CRM integration. “Ready” means the record passed these example rules; it does not verify a person’s identity, email deliverability or marketing consent. Production work needs your actual field mapping and approval. Cross-batch replay protection is separate integration work.</p><div class="actions"><a class="button" href="index.html#contact">Discuss a similar problem ↗</a></div></main><footer><div class="wrap"><span>© 2026 Cedarstone Ventures LLC · Fictional example, 12 November 2026</span><a href="privacy.html">Privacy</a></div></footer></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta charset="utf-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; object-src 'none'; form-action 'none'"
+    />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>A worked enquiry-cleanup example | Cedarstone</title>
+    <link rel="stylesheet" href="/workflow-services/style.css" />
+    <script src="example.js" defer></script>
+    <link
+      rel="canonical"
+      href="https://cedarstonellc.com/workflow-services/example.html"
+    />
+    <link rel="icon" href="/assets/cedarstone-mark.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header>
+      <div class="wrap nav">
+        <a class="brand" href="/"
+          ><span>Cedarstone<small>VENTURES LLC</small></span></a
+        >
+        <nav class="navlinks" aria-label="Main navigation">
+          <a href="index.html#services">Services</a
+          ><a href="index.html#contact">Discuss your process ↗</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main" class="wrap document">
+      <a class="back" href="index.html">← Back to services</a>
+      <h1>From a messy enquiry list<br />to a checkable result.</h1>
+      <p>
+        Imagine a small team combining enquiries from a website, referrals and
+        an event. A repeated submission inflates the count, dates arrive in
+        different formats, and one enquiry ID has two conflicting email
+        addresses.
+      </p>
+      <p>
+        This is the saved output of a local processing run on 12 fictional
+        records. Explore the decisions below or download the source and results.
+        No customer system is connected.
+      </p>
+      <div class="stats" id="counts">
+        <div class="stat"><strong>12</strong><span>Input records</span></div>
+        <div class="stat"><strong>5</strong><span>Ready</span></div>
+        <div class="stat"><strong>1</strong><span>Duplicate</span></div>
+        <div class="stat"><strong>6</strong><span>Review</span></div>
+      </div>
+      <div class="toolbar">
+        <label for="status-filter"
+          >Show records
+          <select id="status-filter">
+            <option value="all">All decisions</option>
+            <option value="ready">Ready</option>
+            <option value="duplicate">Duplicates</option>
+            <option value="review">Needs review</option>
+          </select></label
+        ><span class="status" id="row-count" aria-live="polite"
+          >Loading results…</span
+        >
+      </div>
+      <div id="error" role="alert" hidden></div>
+      <div
+        class="table-scroll"
+        tabindex="0"
+        role="region"
+        aria-label="Enquiry record decisions"
+      >
+        <table>
+          <caption>
+            Every input record retains its source reference. Record 1 is the
+            column header.
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Record</th>
+              <th scope="col">Enquiry ID</th>
+              <th scope="col">Contact</th>
+              <th scope="col">Decision</th>
+              <th scope="col">What happened</th>
+            </tr>
+          </thead>
+          <tbody id="records"></tbody>
+        </table>
+      </div>
+      <noscript
+        ><p>
+          The interactive table needs JavaScript. All results are available in
+          the downloadable CSV files below.
+        </p></noscript
+      >
+      <div class="file-links">
+        <a href="data/inquiries-fictional.csv" download
+          >Original fictional input CSV ↓</a
+        ><a href="data/ready.csv" download>Prepared records CSV ↓</a
+        ><a href="data/review-and-duplicates.csv" download
+          >Exceptions and duplicates CSV ↓</a
+        ><a href="data/result.json" download>Full decision record JSON ↓</a>
+      </div>
+      <h2>The rules make the difference.</h2>
+      <p>
+        A matching enquiry ID and identical normalized content count as an exact
+        replay. Two different records with the same ID are both held for review.
+        A shared email alone does not make two enquiries duplicates.
+      </p>
+      <p>
+        Whitespace and source labels are standardized. Dates are converted to
+        UTC only when an explicit time zone is present. Missing details and
+        ambiguous dates are flagged; they are not invented. The original file is
+        preserved.
+      </p>
+      <h2>What this demonstrates</h2>
+      <p>
+        The example covers preparation, duplicate handling, exceptions, record
+        counts and a repeatable handover. The same input produces the same
+        output. The automated checks also cover malformed records and preserving
+        prior results.
+      </p>
+      <p class="limits">
+        This is a batch preparation example, not a live CRM integration. “Ready”
+        means the record passed these example rules; it does not verify a
+        person’s identity, email deliverability or marketing consent. Production
+        work needs your actual field mapping and approval. Cross-batch replay
+        protection is separate integration work.
+      </p>
+      <div class="actions">
+        <a class="button" href="index.html#contact"
+          >Discuss a similar problem ↗</a
+        >
+      </div>
+    </main>
+    <footer>
+      <div class="wrap">
+        <span
+          >© 2026 Cedarstone Ventures LLC · Fictional example, 12 November
+          2026</span
+        ><a href="privacy.html">Privacy</a>
+      </div>
+    </footer>
+  </body>
+</html>

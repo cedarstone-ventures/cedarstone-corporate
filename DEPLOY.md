@@ -1,24 +1,7 @@
-# Deploying cedarstonellc.com
+# Cedarstone production website
 
-The site is live for preview at the GitHub Pages project URL. It is NOT yet on the
-real domain, because `cedarstonellc.com` currently points at the old Netlify holding
-page.
+Current as of 12 November 2026. GitHub Pages publishes master at https://cedarstonellc.com with HTTPS. CNAME is already configured; no DNS change is needed. This is a static company/services site, with no public server application, uploads, database or payment form.
 
-## To put it on the real domain (one action, at the registrar)
+Before merging: run the local company website checks documented in the canonical business workspace, confirm all public copy describes Cedarstone independently, and inspect the diff. Keep client records, credentials, private company documents and operational reports out of this repository. `_config.yml` excludes operational source files from the website build; the repository itself is public.
 
-1. In the DNS for `cedarstonellc.com`, replace the current records with:
-
-   | Type  | Host | Value                  |
-   |-------|------|------------------------|
-   | A     | @    | 185.199.108.153        |
-   | A     | @    | 185.199.109.153        |
-   | A     | @    | 185.199.110.153        |
-   | A     | @    | 185.199.111.153        |
-   | CNAME | www  | cedarstone-ventures.github.io. |
-
-2. Tell the operator. It then runs `mv CNAME.pending CNAME`, commits, and enables
-   HTTPS. Propagation is usually minutes, occasionally a few hours.
-
-`CNAME.pending` is held out of the build on purpose: while a CNAME file is present,
-GitHub Pages serves ONLY at the custom domain, which would make the site unreachable
-for preview until DNS moves.
+The original Deedwell-related copy and images were removed at the owner's request. Do not restore them through old release folders. Published history remains in Git. The canonical service quality and security reports are stored outside this public repository in services/workflow-repair/verification/company-review-2026-11-12/.

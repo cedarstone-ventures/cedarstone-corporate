@@ -1,0 +1,8 @@
+exclude:
+  - AGENTS.md
+  - DEPLOY.md
+  - README.md
+  - scripts
+  - tests
+  - package.json
+  - package-lock.json

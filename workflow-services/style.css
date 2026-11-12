@@ -61,6 +61,7 @@ header {
 }
 .brand {
   display: flex;
+  min-height: 44px;
   gap: 12px;
   align-items: center;
   text-decoration: none;
@@ -762,8 +763,10 @@ footer nav {
   }
 }
 
-.company-facts a {
+.company-facts a,
+.document p a {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
+  min-width: 44px;
 }

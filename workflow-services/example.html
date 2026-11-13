@@ -3,10 +3,7 @@
   <head>
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta charset="utf-8" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; object-src 'none'; form-action 'none'"
-    />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; object-src 'none'; form-action 'none'" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>A worked enquiry-cleanup example | Cedarstone</title>
     <link rel="stylesheet" href="/workflow-services/style.css" />
@@ -105,7 +102,9 @@
       <p>
         A matching enquiry ID and identical normalized content count as an exact
         replay. Two different records with the same ID are both held for review.
-        A shared email alone does not make two enquiries duplicates.
+        A shared email alone does not make two enquiries duplicates. This
+        example does not find near-matches or repeated enquiries with different
+        IDs.
       </p>
       <p>
         Whitespace and source labels are standardized. Dates are converted to
@@ -117,7 +116,8 @@
       <p>
         The example covers preparation, duplicate handling, exceptions, record
         counts and a repeatable handover. The same input produces the same
-        output. The automated checks also cover malformed records and preserving
+        output. Malformed files are rejected before export, rather than partly
+        processed. The automated checks cover that rejection and preservation of
         prior results.
       </p>
       <p class="limits">
@@ -126,6 +126,12 @@
         person’s identity, email deliverability or marketing consent. Production
         work needs your actual field mapping and approval. Cross-batch replay
         protection is separate integration work.
+      </p>
+      <p class="limits">
+        The exceptions CSV is for human review, not import. Formula-like cells
+        are flagged and prefixed with an apostrophe, which changes their text.
+        CSV downloads use UTF-8 with a byte-order mark. Compatibility and safe
+        handling still need checks in the agreed destination application.
       </p>
       <div class="actions">
         <a class="button" href="index.html#contact"

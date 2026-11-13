@@ -1,4 +1,4 @@
-inquiry_id,name,email,received_at,source,request
+﻿inquiry_id,name,email,received_at,source,request
 INQ-001,Nora Example,nora@example.invalid,2026-11-10T14:00:00Z,website,Please quote a monthly report
 INQ-002,Miles Example,miles@example.invalid,2026-11-10T15:00:00Z,referral,Help clean our enquiry list
 INQ-006,Jamie Example,jamie@example.invalid,2026-11-11T10:00:00Z,event,Organise the event enquiries

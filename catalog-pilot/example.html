@@ -57,9 +57,9 @@
         <p class="eyebrow">Fictional demonstration</p>
         <h1>A catalog row you can check.</h1>
         <p class="lead">
-          Six products, eight source fields and one page reference per row. The
-          material for CS-106 is absent in the source and intentionally blank in
-          the CSV.
+          Six products, eight source fields, a row ID and a page reference per
+          row. The size for CS-106 is absent in the source and intentionally
+          blank in the CSV.
         </p>
         <div class="file-links">
           <a href="/catalog-pilot/data/example-source.html"
@@ -75,10 +75,9 @@
           Compare each value with the source. “Not stated” below is an empty CSV
           cell, not a guessed value.
         </p>
-        <div
+        <section
           class="table-scroll"
           tabindex="0"
-          role="region"
           aria-label="Example products; scroll horizontally to see all columns"
         >
           <table>
@@ -87,92 +86,99 @@
             </caption>
             <thead>
               <tr>
+                <th scope="col">row_id</th>
+                <th scope="col">source_page</th>
                 <th scope="col">sku</th>
                 <th scope="col">product_name</th>
-                <th scope="col">material</th>
-                <th scope="col">colour</th>
+                <th scope="col">size</th>
                 <th scope="col">pack_quantity</th>
-                <th scope="col">wholesale_price</th>
+                <th scope="col">source_price</th>
                 <th scope="col">currency</th>
                 <th scope="col">price_basis</th>
-                <th scope="col">source_page</th>
+                <th scope="col">unit</th>
               </tr>
             </thead>
             <tbody>
               <tr>
+                <td>r1</td>
+                <td>1</td>
                 <td>CS-101</td>
-                <td>Stoneware mug</td>
-                <td>Stoneware</td>
-                <td>Oat</td>
+                <td>Stoneware mug, Oat</td>
+                <td>300 ml</td>
                 <td>6</td>
                 <td>4.50</td>
                 <td>USD</td>
-                <td>per item</td>
-                <td>1</td>
+                <td>per_item</td>
+                <td>item</td>
               </tr>
               <tr>
+                <td>r2</td>
+                <td>1</td>
                 <td>CS-102</td>
-                <td>Stoneware mug</td>
-                <td>Stoneware</td>
-                <td>Moss</td>
+                <td>Stoneware mug, Moss</td>
+                <td>300 ml</td>
                 <td>6</td>
                 <td>4.50</td>
                 <td>USD</td>
-                <td>per item</td>
-                <td>1</td>
+                <td>per_item</td>
+                <td>item</td>
               </tr>
               <tr>
+                <td>r3</td>
+                <td>1</td>
                 <td>CS-103</td>
                 <td>Serving bowl</td>
-                <td>Stoneware</td>
-                <td>Oat</td>
+                <td>18 cm</td>
                 <td>4</td>
                 <td>12.00</td>
                 <td>USD</td>
-                <td>per item</td>
-                <td>1</td>
+                <td>per_item</td>
+                <td>item</td>
               </tr>
               <tr>
+                <td>r4</td>
+                <td>1</td>
                 <td>CS-104</td>
                 <td>Linen napkin</td>
-                <td>Linen</td>
-                <td>Natural</td>
+                <td>40 x 40 cm</td>
                 <td>12</td>
                 <td>3.25</td>
                 <td>USD</td>
-                <td>per item</td>
-                <td>1</td>
+                <td>per_item</td>
+                <td>item</td>
               </tr>
               <tr>
+                <td>r5</td>
+                <td>1</td>
                 <td>CS-105</td>
                 <td>Glass tumbler</td>
-                <td>Glass</td>
-                <td>Clear</td>
+                <td>250 ml</td>
                 <td>6</td>
                 <td>2.80</td>
                 <td>USD</td>
-                <td>per item</td>
-                <td>1</td>
+                <td>per_item</td>
+                <td>item</td>
               </tr>
               <tr>
+                <td>r6</td>
+                <td>1</td>
                 <td>CS-106</td>
                 <td>Storage basket</td>
                 <td>Not stated</td>
-                <td>Natural</td>
                 <td>4</td>
                 <td>8.00</td>
                 <td>USD</td>
-                <td>per item</td>
-                <td>1</td>
+                <td>per_item</td>
+                <td>item</td>
               </tr>
             </tbody>
           </table>
-        </div>
+        </section>
         <div class="learning-grid">
           <article>
             <h2>One missing value</h2>
             <p>
-              Material was optional for this example. If it were required, the
+              Size was optional for this example. If it were required, the
               missing CS-106 value would stop the job until an eligible source
               resolved it.
             </p>

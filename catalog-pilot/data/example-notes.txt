@@ -1,0 +1,8 @@
+CEDARSTONE CATALOG PILOT — FICTIONAL EXAMPLE
+This six-product teaching example was created by Cedarstone. It is not a supplier offer, customer result or accuracy benchmark.
+
+Read example-source.html beside example-products.csv. Eight source fields are followed by a source_page reference. All prices are USD per item; pack_quantity is kept separately. SKU values remain text.
+
+The source does not state the material for CS-106. In this example material was optional, so the output cell is blank and the exception is recorded here. If material were required, this source would need correction or the job would be declined before payment.
+
+This is an agreed-column CSV demonstration, not a Shopify or other store-import template. Destination requirements must be agreed before a job is accepted. No retail prices, images, descriptions or variants are invented.

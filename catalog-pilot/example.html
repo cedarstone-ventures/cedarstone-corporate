@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en" data-type="service">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; base-uri 'none'; object-src 'none'; form-action 'none'"
+    />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="theme-color" content="#112a22" />
+    <meta name="page-type" content="service" />
+    <meta name="site-kind" content="other" />
+    <title>A catalog row you can check | Cedarstone Ventures LLC</title>
+    <meta
+      name="description"
+      content="Compare a fictional supplier source with its CSV, source references and exception note. A six-product teaching example from Cedarstone."
+    />
+    <meta
+      property="og:title"
+      content="A catalog row you can check | Cedarstone"
+    />
+    <meta
+      property="og:description"
+      content="Compare a fictional supplier source with its CSV, source references and exception note. A six-product teaching example from Cedarstone."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/assets/cedarstone-mark.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/workflow-services/style.css" />
+    <link rel="stylesheet" href="/catalog-pilot/pilot.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="preview-status">
+      Pilot preview · Enquiries and payments are not open yet.
+    </div>
+    <header>
+      <div class="wrap nav">
+        <a class="brand" href="/"
+          ><img
+            src="/assets/cedarstone-mark.svg"
+            width="35"
+            height="35"
+            alt=""
+          /><span>Cedarstone<small>VENTURES LLC</small></span></a
+        >
+        <nav class="navlinks" aria-label="Main navigation">
+          <a href="/catalog-pilot/#scope">Pilot scope</a
+          ><a href="/catalog-pilot/example.html">See the example</a
+          ><a href="/catalog-pilot/#check">Check your scope</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main" class="document">
+      <div class="wrap">
+        <p class="eyebrow">Fictional demonstration</p>
+        <h1>A catalog row you can check.</h1>
+        <p class="lead">
+          Six products, eight source fields and one page reference per row. The
+          material for CS-106 is absent in the source and intentionally blank in
+          the CSV.
+        </p>
+        <div class="file-links">
+          <a href="/catalog-pilot/data/example-source.html"
+            >Open the fictional source</a
+          ><a href="/catalog-pilot/data/example-products.csv" download
+            >Download the CSV</a
+          ><a href="/catalog-pilot/data/example-notes.txt" download
+            >Download the exception note</a
+          >
+        </div>
+        <h2>The prepared columns</h2>
+        <p>
+          Compare each value with the source. “Not stated” below is an empty CSV
+          cell, not a guessed value.
+        </p>
+        <div
+          class="table-scroll"
+          tabindex="0"
+          role="region"
+          aria-label="Example products; scroll horizontally to see all columns"
+        >
+          <table>
+            <caption>
+              Fictional product facts · USD per item · source page 1
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">sku</th>
+                <th scope="col">product_name</th>
+                <th scope="col">material</th>
+                <th scope="col">colour</th>
+                <th scope="col">pack_quantity</th>
+                <th scope="col">wholesale_price</th>
+                <th scope="col">currency</th>
+                <th scope="col">price_basis</th>
+                <th scope="col">source_page</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>CS-101</td>
+                <td>Stoneware mug</td>
+                <td>Stoneware</td>
+                <td>Oat</td>
+                <td>6</td>
+                <td>4.50</td>
+                <td>USD</td>
+                <td>per item</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>CS-102</td>
+                <td>Stoneware mug</td>
+                <td>Stoneware</td>
+                <td>Moss</td>
+                <td>6</td>
+                <td>4.50</td>
+                <td>USD</td>
+                <td>per item</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>CS-103</td>
+                <td>Serving bowl</td>
+                <td>Stoneware</td>
+                <td>Oat</td>
+                <td>4</td>
+                <td>12.00</td>
+                <td>USD</td>
+                <td>per item</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>CS-104</td>
+                <td>Linen napkin</td>
+                <td>Linen</td>
+                <td>Natural</td>
+                <td>12</td>
+                <td>3.25</td>
+                <td>USD</td>
+                <td>per item</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>CS-105</td>
+                <td>Glass tumbler</td>
+                <td>Glass</td>
+                <td>Clear</td>
+                <td>6</td>
+                <td>2.80</td>
+                <td>USD</td>
+                <td>per item</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>CS-106</td>
+                <td>Storage basket</td>
+                <td>Not stated</td>
+                <td>Natural</td>
+                <td>4</td>
+                <td>8.00</td>
+                <td>USD</td>
+                <td>per item</td>
+                <td>1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="learning-grid">
+          <article>
+            <h2>One missing value</h2>
+            <p>
+              Material was optional for this example. If it were required, the
+              missing CS-106 value would stop the job until an eligible source
+              resolved it.
+            </p>
+          </article>
+          <article>
+            <h2>Agree the destination</h2>
+            <p>
+              These headers describe the agreed output. They are not a claim of
+              compatibility with a particular store import.
+            </p>
+          </article>
+          <article>
+            <h2>Check the actual job</h2>
+            <p>
+              This small fictional example explains the format. It does not
+              prove general accuracy or replace checks on a new catalog.
+            </p>
+          </article>
+        </div>
+        <a class="back" href="/catalog-pilot/#check"
+          >Return to the scope check</a
+        >
+      </div>
+    </main>
+    <footer>
+      <div class="wrap">
+        <span>© 2026 Cedarstone Ventures LLC</span>
+        <nav aria-label="Footer">
+          <a href="/">Company</a
+          ><a href="/catalog-pilot/privacy.html">Preview privacy</a
+          ><a href="/terms.html">Website terms</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

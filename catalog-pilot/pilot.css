@@ -100,6 +100,124 @@
   margin-top: 21px;
   color: var(--muted);
 }
+.sample-comparison {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 28px 40px;
+  margin: 32px 0 0;
+  padding: 32px;
+  background: #dce5d6;
+}
+.sample-comparison h3 {
+  margin: 0 0 18px;
+  font: 26px/1.25 var(--serif);
+}
+.sample-source,
+.sample-output {
+  min-width: 0;
+}
+.sample-document {
+  display: block;
+  color: var(--ink);
+  text-decoration: none;
+}
+.sample-document img {
+  display: block;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 10px 24px #17392d14;
+}
+.sample-document span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-size: 14px;
+}
+.sample-intro,
+.sample-exception {
+  color: var(--muted);
+  font-size: 15px;
+}
+.sample-output table {
+  width: 100%;
+  min-width: 0;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+  background: var(--white);
+}
+.sample-output caption {
+  padding: 0 0 12px;
+  text-align: left;
+  color: var(--muted);
+  font-size: 13px;
+  background: transparent;
+}
+.sample-output th,
+.sample-output td {
+  padding: 13px 12px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+  white-space: normal;
+}
+.sample-output thead th {
+  background: #eef2e9;
+  font-weight: 600;
+}
+.sample-output tbody th {
+  font-weight: 400;
+  background: transparent;
+}
+.sample-output tbody th span {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.sample-output td {
+  min-width: 0;
+  text-align: right;
+}
+.sample-output thead th:not(:first-child) {
+  text-align: right;
+}
+.sample-full {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 12px;
+  color: var(--ink);
+  text-underline-offset: 4px;
+  font-size: 15px;
+}
+.sample-comparison figcaption {
+  grid-column: 1 / -1;
+  padding-top: 20px;
+  border-top: 1px solid #b7c6aa;
+  color: var(--muted);
+  font-size: 13px;
+}
+@media (max-width: 850px) {
+  .sample-comparison {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 24px;
+  }
+}
+@media (max-width: 480px) {
+  .sample-comparison {
+    padding: 16px;
+    gap: 24px;
+  }
+  .sample-output th,
+  .sample-output td {
+    padding: 12px 8px;
+    font-size: 13px;
+  }
+}
 .scope-columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
